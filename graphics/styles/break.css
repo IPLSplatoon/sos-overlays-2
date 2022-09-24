@@ -1,0 +1,371 @@
+:root{
+    font-family: dosis;
+    color: var(--blue-grey);
+    font-size: 64px;
+}
+
+.scrolling-container {
+    width: 1920px;
+    height: 2700px;
+    background: linear-gradient(180deg, var(--off-white) 0%, var(--seafoam) 40%, var(--blue-grey) 60%, var(--dark-blue) 100%);
+    overflow: hidden;
+}
+
+.content-wrapper {
+    width: 1920px;
+    height: 1080px;
+}
+
+/* Break aka Main Screen */
+
+.break {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.break > .break-half {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.break > div:first-child {
+    align-items: center;
+}
+
+.break > div:last-child {
+    padding-right: 25px;
+}
+
+.flavor-text {
+    font-family: glock;
+    font-size: 96px;
+    color: var(--dark-blue);
+    width: fit-content;
+}
+
+.up-next-wrapper > .header {
+    font-weight: 500;
+    font-size: 84px;
+    color: var(--dark-blue);
+    width: fit-content;
+}
+
+.up-next-wrapper > .detail {
+    font-weight: 900;
+    line-height: 110%;
+    width: fit-content;
+}
+
+.up-next-wrapper > .stages-wrapper {
+    display: flex;
+    margin-top: 10px;
+}
+
+.up-next-wrapper > .stages-wrapper > .stage {
+    width: 240px;
+    height: 150px;
+    padding-left: 15px;
+    background-size: cover !important;
+    border: 4px solid var(--blue-grey);
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    color: var(--seafoam);
+    font-weight: 900;
+    font-size: 32px;
+
+    --gradient: linear-gradient(90deg, var(--blue-grey) -25%, #00000000 200%);
+}
+
+.up-next-wrapper > .stages-wrapper > .stage:not(:last-child) {
+    margin-right: 6px;
+}
+
+.up-next-wrapper > .stages-wrapper > .more-stages {
+    width: 80px;
+    padding: 0;
+    font-size: 48px;
+    font-weight: 500;
+    color: var(--seafoam);
+    background: var(--dark-blue);
+    justify-content: center;
+}
+
+.up-next-wrapper > .timer {
+    font-weight: 900;
+    font-size: 48px;
+    width: fit-content;
+}
+
+.break-bottom-bar {
+    width: 1920px;
+    height: 150px;
+    top: calc(1080px - 155px);
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+/* Teams/Stages Screen */
+
+.game-info-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(1080px - 220px);
+}
+
+.teams-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1920px;
+}
+
+.team-box{
+    width: 450px;
+    height: 610px;
+    background: linear-gradient(0deg, var(--dark-blue) 0%, var(--blue-grey) 175%);
+    outline: 5px solid var(--seafoam);
+    border-radius: 30px;
+    z-index: -2;
+}
+
+.team-box > .image {
+    z-index: -1;
+    position: absolute;
+    --angle: 90deg;
+    -webkit-mask-image: linear-gradient(var(--angle), rgba(0,0,0,.65) , rgba(0,0,0,0));
+    mask-image: linear-gradient(var(--angle), rgba(0,0,0,.65), rgba(0,0,0,0));
+    object-fit: cover;
+    height: 150px;
+    width: 200px;
+    border-radius: 30px 0 0 0;
+}
+
+.team-right > .image{
+    transform: translateX(250px);
+    border-radius: 0 30px 0 0;
+    --angle: 270deg;
+}
+
+.team-box > .name {
+    display: flex;
+    align-items: center;
+    height: 150px;
+    padding: 0 30px;
+    font-size: 72px;
+    color: white;
+}
+
+.team-left > .name {
+    justify-content: flex-end;
+}
+
+.team-box > .divider {
+    width: 100%;
+    height: 4px;
+    --angle: 90deg;
+    background: linear-gradient(var(--angle), var(--seafoam) 0%, #00000000 90%);
+}
+
+.team-right > .divider {
+    --angle: 270deg
+}
+
+.team-box > .roster {
+    height: 356px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 50px 30px;
+}
+
+.team-left > .roster {
+    align-items: flex-end;
+}
+
+.team-box > .roster > .player {
+    font-weight: 900;
+    color: var(--seafoam);
+    font-size: 40px;
+}
+
+.teams-wrapper > .score{
+    width: 300px;
+    padding: 0 50px 0 50px;
+    text-align: center;
+}
+
+.teams-wrapper > .score > .score-text{
+    font-family: glock;
+    color: white;
+    font-size: 96px;
+}
+
+.teams-wrapper > .score > .score-info{
+    font-weight: 900;
+    font-size: 32px;
+    color: var(--seafoam);
+}
+
+.game-info-wrapper > .stages-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 1600px;
+    padding: 0 100px;
+}
+
+.game-info-wrapper > .stages-wrapper > .stage {
+    flex: 1 1 0px;
+    height: 580px;
+    width: 100%;
+    max-width: 365px;
+    min-width: 200px;
+    padding: 15px;
+    margin: 0 15px;
+    background-size: cover !important;
+    border-radius: 30px;
+    outline: 5px solid var(--seafoam);
+
+    --gradient: linear-gradient(0deg, var(--dark-blue) -10%, #00000000 120%);
+}
+
+.game-info-wrapper > .stages-wrapper > .finished {
+    --gradient: linear-gradient(0deg, var(--dark-blue) 0%, #00000000 150%), linear-gradient(180deg, var(--dark-blue) -60%, #00000000 40%);
+} 
+
+.game-info-wrapper > .stages-wrapper > .stage:first-child {
+    margin-left: 0;
+}
+
+.game-info-wrapper > .stages-wrapper > .stage:last-child {
+    margin-right: 0;
+}
+
+.game-info-wrapper > .stages-wrapper > .stage > .winner {
+    position: absolute;
+    font-size: 40px;
+    font-weight: 900;
+    color: white;
+}
+
+.game-info-wrapper > .stages-wrapper > .stage > .info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    height: 100%;
+    width: 100%;
+}
+
+.game-info-wrapper > .stages-wrapper > .stage > .info-container > .mode {
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--seafoam);
+}
+
+.game-info-wrapper > .stages-wrapper > .stage > .info-container > .map {
+    font-size: 52px;
+    color: white;
+}
+
+.bottom-bar {
+    display: flex;
+    position: absolute;
+    top: 2490px;
+    width: 1600px;
+    height: 150px;
+    outline: 5px solid var(--seafoam);
+    border-radius: 30px;
+    background: var(--blue-grey);
+    z-index: -5;
+}
+
+.bottom-bar > .half {
+    width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    color: white;
+}
+
+.bottom-bar > .right{
+    justify-content: right;
+    background: linear-gradient(90deg, #00000000 25%, var(--dark-blue) 65%, var(--dark-blue) 100%);
+    border-radius: 0 30px 30px 0;
+}
+
+.bottom-bar > .right > .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.bottom-bar > .right > .bar-teams {
+    flex-direction: column;
+}
+
+.bottom-bar > .right > .bar-teams > img {
+    width: 310px;
+    height: 150px;
+    position: absolute;
+    object-fit: cover;
+    bottom: 2px;
+    -webkit-mask-image: linear-gradient(270deg, rgba(0,0,0,.0) 0%, rgba(0,0,0,.3) 50%, rgba(0,0,0,0)100%);
+    mask-image: linear-gradient(270deg, rgba(0,0,0,.0) 0%, rgba(0,0,0,.3) 50%, rgba(0,0,0,0)100%);
+}
+
+.bottom-bar > .right > .bar-teams > .img-left {
+    right: 250px;
+}
+
+.bottom-bar > .right > .bar-teams > .img-right {
+    right: 0px;
+}
+
+.bottom-bar > .right > .bar-teams > .team {
+    display: flex;
+    z-index: 1;
+    line-height: 110%;
+}
+
+.bottom-bar > .right > .bar-teams > .team > .name {
+    font-size: 56px;
+}
+
+.bottom-bar > .right > .bar-teams > .team > .score {
+    font-size: 56px;
+    font-weight: 900;
+    color: var(--seafoam);
+    margin-left: 1ch;
+}
+
+.bottom-bar > .right > .next-stage > .bg-image {
+    width: 620px;
+    height: 150px;
+    position: absolute;
+    border-radius: 0 30px 30px 0;
+    -webkit-mask-image: linear-gradient(270deg, rgba(0,0,0,.3) 0%, rgba(0,0,0,.3) 50%, rgba(0,0,0,0)100%);
+    mask-image: linear-gradient(270deg, rgba(0,0,0,.3) 0%, rgba(0,0,0,.3) 50%, rgba(0,0,0,0)100%);
+    object-fit: cover;
+}
+
+.bottom-bar > .right > .next-stage > .text {
+    text-align: right;
+    z-index: 1;
+}
+
+.bottom-bar > .right > .next-stage > .text > .subtext {
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--seafoam);
+    line-height: 110%;
+}
+
+.bottom-bar > .right > .next-stage > .text > .stage-name {
+    font-size: 64px;
+    line-height: 110%;
+}

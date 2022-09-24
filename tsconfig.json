@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "module": "es6",
+        "target": "es6",
+        "sourceMap": true,
+        "esModuleInterop": true,
+        "baseUrl": ".",
+        "moduleResolution": "node",
+        "paths": {
+            "nodecg/*": [
+                "../../types/*"
+            ],
+            "schemas": [
+                "../ipl-overlay-controls/src/types/schemas/index"
+            ]
+        }
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}

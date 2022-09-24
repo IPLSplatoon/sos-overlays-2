@@ -1,0 +1,35 @@
+:root{
+    --off-white: #f3f9fa;
+    --seafoam: #cef7e7;
+    --dark-teal: #335563;
+    --blue-grey: #4d6c72;
+    --dark-blue: #191a34;
+
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+
+body {
+    margin: 0;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    outline: solid 2px black;
+}
+
+@font-face {
+    font-family: glock;
+    src: url(../fonts/glock.ttf);
+}
+
+@font-face {
+    font-family: dosis;
+    src: url(../fonts/dosis.ttf);
+}
+
+@font-face {
+    font-family: sourcesanspro;
+    src: url(../fonts/sourcesanspro.ttf);
+}
