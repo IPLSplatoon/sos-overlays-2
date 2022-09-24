@@ -18,7 +18,7 @@ const fadeOut = {
     webkitFilter: "blur(8px)",
     opacity: 0,
     duration: .5,
-    ease: "power2.out"
+    ease: "power2.in"
 };
 activeBreakScene.on('change', (newValue, oldValue) => {
     switch (oldValue) {
@@ -29,11 +29,14 @@ activeBreakScene.on('change', (newValue, oldValue) => {
         case "teams":
             sceneTl.add(hideTeams());
             if (newValue == "main") {
+                sceneTl.add(hideBottomBar(), "<");
                 sceneTl.add(shiftUp());
             }
             break;
         case "stages":
+            sceneTl.add(hideStages());
             if (newValue == "main") {
+                sceneTl.add(hideBottomBar(), "<");
                 sceneTl.add(shiftUp());
             }
     }
@@ -43,8 +46,15 @@ activeBreakScene.on('change', (newValue, oldValue) => {
             break;
         case "teams":
             sceneTl.add(showTeams());
+            if (oldValue == "main") {
+                sceneTl.add(showBottomBar(), "<");
+            }
             break;
         case "stages":
+            sceneTl.add(showStages());
+            if (oldValue == "main") {
+                sceneTl.add(showBottomBar(), "<");
+            }
     }
 });
 function shiftUp() {
@@ -102,12 +112,61 @@ function hideMain() {
 }
 function showTeams() {
     const tl = gsap.timeline();
-    tl.fromTo(".game-info-wrapper > .teams-wrapper > *", fadeInStart, Object.assign(Object.assign({}, fadeInEnd), { stagger: .2 }));
+    tl.fromTo(".game-info-wrapper > .teams-wrapper > *", Object.assign({}, fadeInStart), Object.assign(Object.assign({}, fadeInEnd), { stagger: .2, onStart: function () {
+            const wrapper = document.querySelector(".game-info-wrapper > .teams-wrapper");
+            wrapper.style.display = "flex";
+        } }));
     return tl;
 }
 function hideTeams() {
     const tl = gsap.timeline();
-    tl.to(".game-info-wrapper > .teams-wrapper > *", Object.assign(Object.assign({}, fadeOut), { stagger: .1 }));
+    tl.to(".game-info-wrapper > .teams-wrapper > *", Object.assign(Object.assign({}, fadeOut), { stagger: .1, onComplete: function () {
+            const wrapper = document.querySelector(".game-info-wrapper > .teams-wrapper");
+            wrapper.style.display = "none";
+        } }));
+    return tl;
+}
+function showStages() {
+    const tl = gsap.timeline();
+    const stageElems = document.querySelectorAll(".game-info-wrapper > .stages-wrapper > .stage");
+    const count = stageElems.length;
+    tl.fromTo(stageElems, Object.assign({}, fadeInStart), Object.assign(Object.assign({}, fadeInEnd), { stagger: (.6 / count), onStart: function () {
+            const wrapper = document.querySelector(".game-info-wrapper > .stages-wrapper");
+            wrapper.style.display = "flex";
+        } }));
+    return tl;
+}
+function hideStages() {
+    const tl = gsap.timeline();
+    const stageElems = document.querySelectorAll(".game-info-wrapper > .stages-wrapper > .stage");
+    const count = stageElems.length;
+    tl.to(stageElems, Object.assign(Object.assign({}, fadeOut), { stagger: (.3 / count), onComplete: function () {
+            const wrapper = document.querySelector(".game-info-wrapper > .stages-wrapper");
+            wrapper.style.display = "none";
+        } }));
+    return tl;
+}
+function showBottomBar() {
+    const tl = gsap.timeline();
+    tl.fromTo(".bottom-bar", {
+        opacity: 0,
+        y: 85
+    }, {
+        opacity: 1,
+        y: 0,
+        ease: "power2.out",
+        duration: .8
+    });
+    return tl;
+}
+function hideBottomBar() {
+    const tl = gsap.timeline();
+    tl.to(".bottom-bar", {
+        opacity: 0,
+        y: 85,
+        ease: "power2.in",
+        duration: .5
+    });
     return tl;
 }
 //# sourceMappingURL=sceneSwitcher.js.map

@@ -41,7 +41,6 @@
     font-family: glock;
     font-size: 96px;
     color: var(--dark-blue);
-    width: fit-content;
 }
 
 .up-next-wrapper > .header {
@@ -55,7 +54,14 @@
     font-weight: 900;
     line-height: 110%;
     width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
 }
+
+.up-next-wrapper > .detail > fitted-text:first-child {
+    margin-right: .45ch;
+}
+
 
 .up-next-wrapper > .stages-wrapper {
     display: flex;
@@ -328,8 +334,10 @@
 
 .bottom-bar > .right > .bar-teams > .team {
     display: flex;
+    justify-content: flex-end;
     z-index: 1;
     line-height: 110%;
+    width: 100%;
 }
 
 .bottom-bar > .right > .bar-teams > .team > .name {

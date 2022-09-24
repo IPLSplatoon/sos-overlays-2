@@ -20,7 +20,7 @@ const fadeOut = {
     webkitFilter: "blur(8px)",
     opacity: 0,
     duration: .5,
-    ease: "power2.out"
+    ease: "power2.in"
 }
 
 activeBreakScene.on('change', (newValue, oldValue) => {
@@ -33,12 +33,15 @@ activeBreakScene.on('change', (newValue, oldValue) => {
         case "teams":
             sceneTl.add(hideTeams());
             if (newValue == "main"){
+                sceneTl.add(hideBottomBar(), "<");
                 sceneTl.add(shiftUp());
             }
             break;
 
         case "stages":
+            sceneTl.add(hideStages());
             if (newValue == "main"){
+                sceneTl.add(hideBottomBar(), "<");
                 sceneTl.add(shiftUp());
             }
     }
@@ -50,9 +53,16 @@ activeBreakScene.on('change', (newValue, oldValue) => {
 
         case "teams":
             sceneTl.add(showTeams());
+            if (oldValue == "main"){
+                sceneTl.add(showBottomBar(), "<");
+            }
             break;
 
         case "stages":
+            sceneTl.add(showStages());
+            if (oldValue == "main"){
+                sceneTl.add(showBottomBar(), "<");
+            }
             
     }
 });
@@ -130,12 +140,85 @@ function hideMain() : gsap.core.Timeline {
 
 function showTeams() : gsap.core.Timeline {
     const tl = gsap.timeline();
-    tl.fromTo(".game-info-wrapper > .teams-wrapper > *", fadeInStart, {...fadeInEnd, stagger: .2});
+    tl.fromTo(".game-info-wrapper > .teams-wrapper > *", {
+        ...fadeInStart
+    }, {
+        ...fadeInEnd,
+        stagger: .2,
+        onStart: function(){
+            const wrapper = document.querySelector(".game-info-wrapper > .teams-wrapper") as HTMLElement;
+            wrapper.style.display = "flex";
+        }
+    });
     return tl;
 }
 
 function hideTeams() : gsap.core.Timeline {
     const tl = gsap.timeline();
-    tl.to(".game-info-wrapper > .teams-wrapper > *", {...fadeOut, stagger: .1});
+    tl.to(".game-info-wrapper > .teams-wrapper > *", {
+        ...fadeOut,
+        stagger: .1,
+        onComplete: function(){
+            const wrapper = document.querySelector(".game-info-wrapper > .teams-wrapper") as HTMLElement;
+            wrapper.style.display = "none";
+        }
+    });
+    return tl;
+}
+
+function showStages() : gsap.core.Timeline {
+    const tl = gsap.timeline();
+    const stageElems = document.querySelectorAll(".game-info-wrapper > .stages-wrapper > .stage");
+    const count = stageElems.length;
+    tl.fromTo(stageElems, { 
+        ...fadeInStart
+    }, {
+        ...fadeInEnd,
+        stagger: (.6/count),
+        onStart: function(){
+            const wrapper = document.querySelector(".game-info-wrapper > .stages-wrapper") as HTMLElement;
+            wrapper.style.display = "flex";
+        }
+    });
+    return tl;
+}
+
+function hideStages() : gsap.core.Timeline {
+    const tl = gsap.timeline();
+    const stageElems = document.querySelectorAll(".game-info-wrapper > .stages-wrapper > .stage");
+    const count = stageElems.length;
+    tl.to(stageElems, {
+        ...fadeOut,
+        stagger: (.3/count),
+        onComplete: function(){
+            const wrapper = document.querySelector(".game-info-wrapper > .stages-wrapper") as HTMLElement;
+            wrapper.style.display = "none";
+        }
+    });
+    return tl;
+}
+
+function showBottomBar() : gsap.core.Timeline {
+    const tl = gsap.timeline();
+    tl.fromTo(".bottom-bar", {
+        opacity: 0,
+        y: 85
+    }, {
+        opacity: 1,
+        y: 0,
+        ease: "power2.out",
+        duration: .8
+    });
+    return tl;
+}
+
+function hideBottomBar() : gsap.core.Timeline {
+    const tl = gsap.timeline();
+    tl.to(".bottom-bar", {
+        opacity: 0,
+        y: 85,
+        ease: "power2.in",
+        duration: .5
+    });
     return tl;
 }

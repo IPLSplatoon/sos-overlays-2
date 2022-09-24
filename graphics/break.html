@@ -4,40 +4,45 @@
     <link rel="stylesheet" href="styles/global.css">
     <link rel="stylesheet" href="styles/break.css">
     <script defer type="module" src="scripts/break/break.js"></script>
+    <script defer src="../node_modules/fitted-text/dist/fitted-text.js"></script>
 </head>
 <body>
     <div class="scrolling-container">
         <div class="content-wrapper break">
             <div class="break-half left">Logo Half</div>
             <div class="break-half right">
-                <div class="flavor-text">Lorem ipsum dolor</div>
+                <fitted-text class="flavor-text" max-width="900" text="Be right back! This text won't fit!"></fitted-text>
                 <div style="height: 50px;"></div>
                 <div class="up-next-wrapper">
                     <div class="header">Up Next</div>
-                    <div class="detail">Lorem ipsum dolor sit amet, consectetur adipiscing</div>
+                    <div class="detail">
+                        <fitted-text max-width="900" text="Team A"></fitted-text>
+                        vs&nbsp;
+                        <fitted-text max-width="900" text="Team B"></fitted-text>
+                    </div>
                     <div class="stages-wrapper">
                         <div class="stage" style="background: var(--gradient), url('assets/stages/S3_Stage_Eeltail_Alley.jpg')">SZ</div>
                         <div class="stage" style="background: var(--gradient), url('assets/stages/S3_Stage_Scorch_Gorge.jpg')">TC</div>
                         <div class="stage" style="background: var(--gradient), url('assets/stages/S3_Stage_Mincemeat_Metalworks.png')">RM</div>
                         <div class="stage more-stages">+2</div>
                     </div>
-                    <div class="timer">In ~5 Minutes</div>
+                    <fitted-text class="timer" text="In ~5 Minutes" max-width="900"></fitted-text>
                 </div>
             </div>
             <div class="break-bottom-bar">Bottom Bar</div>
         </div>
         <div style="height: 540px"></div>
         <div class="content-wrapper game-info-wrapper">
-            <div class="game-info teams-wrapper">
+            <div class="game-info teams-wrapper" style="display: none;">
                 <div class="team-box team-left">
                     <img class="image" src="assets/stages/S2_Stage_Ancho-V_Games.png">
-                    <div class="name">Team A</div>
+                    <fitted-text class="name" text="Team A Longer name test" max-width="380" align="right"></fitted-text>
                     <div class="divider"></div>
                     <div class="roster">
-                        <div class="player">Player</div>
-                        <div class="player">Player</div>
-                        <div class="player">Player</div>
-                        <div class="player">Player</div>
+                        <fitted-text class="player" text="Player" max-width="380"></fitted-text>
+                        <fitted-text class="player" text="Player" max-width="380"></fitted-text>
+                        <fitted-text class="player" text="Player" max-width="380"></fitted-text>
+                        <fitted-text class="player" text="Player" max-width="380"></fitted-text>
                     </div>
                 </div>
                 <div class="score">
@@ -46,19 +51,21 @@
                 </div>
                 <div class="team-box team-right">
                     <img class="image" src="assets/stages/S2_Stage_Ancho-V_Games.png">
-                    <div class="name">Team B</div>
+                    <fitted-text class="name" text="Team B Longer name test" max-width="380"></fitted-text>
                     <div class="divider"></div>
                     <div class="roster">
-                        <div class="player">Player</div>
-                        <div class="player">Player</div>
-                        <div class="player">Player</div>
-                        <div class="player">Player</div>
-                        <div class="player">Player</div>
-                        <div class="player">Player</div>
+                        <fitted-text class="player" text="Player" max-width="380"></fitted-text>
+                        <fitted-text class="player" text="Player" max-width="380"></fitted-text>
+                        <fitted-text class="player" text="Player" max-width="380"></fitted-text>
+                        <fitted-text class="player" text="Player" max-width="380"></fitted-text>
+                        <fitted-text class="player" text="Player" max-width="380"></fitted-text>
+                        <fitted-text class="player" text="Player" max-width="380"></fitted-text>
+                        <fitted-text class="player" text="Player" max-width="380"></fitted-text>
+                        <fitted-text class="player" text="Player" max-width="380"></fitted-text>
                     </div>
                 </div>
             </div>
-            <div class="game-info stages-wrapper"  style="display: none;">
+            <div class="game-info stages-wrapper" style="display: none;">
                 <div class="stage finished" style="background: var(--gradient), url('assets/stages/S3_Stage_Eeltail_Alley.jpg')">
                     <div class="winner">Winner Name</div>
                     <div class="info-container">
@@ -96,22 +103,22 @@
                     Lorem ipsum dolor
                 </div>
                 <div class="half right">
-                    <div class="next-stage wrapper" style="display: none;">
+                    <div class="next-stage wrapper">
                         <img class="bg-image" src="assets/stages/S3_Stage_Scorch_Gorge.jpg">
                         <div class="text">
                             <div class="subtext">Next Stage</div>
-                            <div class="stage-name">Scorch Gorge</div>
+                            <fitted-text class="stage-name" text="Scorch Gorge" max-width="600"></fitted-text>
                         </div>
                     </div>
-                    <div class="bar-teams wrapper" >
+                    <div class="bar-teams wrapper" style="display: none;">
                         <img class="img-left" src="assets/stages/S2_Stage_Ancho-V_Games.png">
                         <img class="img-right" src="assets/stages/S2_Stage_Blackbelly_Skatepark.png">
                         <div class="team">
-                            <div class="name">Team A</div>
+                            <fitted-text class="name" text="Team A really really really long" max-width="600"></fitted-text>
                             <div class="score">2</div>
                         </div>
                         <div class="team">
-                            <div class="name">Team B</div>
+                            <fitted-text class="name" text="Team B" max-width="600"></fitted-text>
                             <div class="score">1</div>
                         </div>
                     </div>
