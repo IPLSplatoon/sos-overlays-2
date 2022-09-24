@@ -114,6 +114,30 @@
     justify-content: center;
 }
 
+.break-bottom-bar > .wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    width: 100%;
+    height: 56px;
+    padding: 0 150px;
+}
+
+.break-bottom-bar > .wrapper > .group{
+    font-family: sourcesanspro;
+    font-size: 36px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+.break-bottom-bar > .wrapper > .group > img{
+    height: 38px;
+    width: 100%;
+    margin-right: .75ch;
+}
+
+
 /* Teams/Stages Screen */
 
 .game-info-wrapper {
@@ -298,6 +322,25 @@
     color: white;
 }
 
+.bottom-bar > .left > .wrapper {
+    display: flex;
+    align-items: center;
+    font-size: 56px;
+}
+
+.bottom-bar > .left > .wrapper > img{
+    height: 68px;
+    width: auto;
+    margin-left: 50px;
+    margin-right: 30px;
+}
+
+.bottom-bar > .left > .wrapper > .stack{
+    display: flex;
+    flex-direction: column;
+    line-height: 110%;
+}
+
 .bottom-bar > .right{
     justify-content: right;
     background: linear-gradient(90deg, #00000000 25%, var(--dark-blue) 65%, var(--dark-blue) 100%);
@@ -310,18 +353,22 @@
     justify-content: flex-end;
 }
 
+.bottom-bar > .right > .wrapper > .text, .bottom-bar > .right > .wrapper > .team{
+    margin-right: 50px;
+}
+
 .bottom-bar > .right > .bar-teams {
     flex-direction: column;
 }
 
 .bottom-bar > .right > .bar-teams > img {
-    width: 310px;
+    width: 280px;
     height: 150px;
     position: absolute;
     object-fit: cover;
     bottom: 2px;
     -webkit-mask-image: linear-gradient(270deg, rgba(0,0,0,.0) 0%, rgba(0,0,0,.3) 50%, rgba(0,0,0,0)100%);
-    mask-image: linear-gradient(270deg, rgba(0,0,0,.0) 0%, rgba(0,0,0,.3) 50%, rgba(0,0,0,0)100%);
+    mask-image: linear-gradient(270deg, rgba(0,0,0,.0) 0%, rgba(0,0,0,.4) 50%, rgba(0,0,0,0)100%);
 }
 
 .bottom-bar > .right > .bar-teams > .img-left {
@@ -332,23 +379,24 @@
     right: 0px;
 }
 
-.bottom-bar > .right > .bar-teams > .team {
+.bottom-bar > .right > .bar-teams > .names-wrapper > .team {
     display: flex;
     justify-content: flex-end;
     z-index: 1;
     line-height: 110%;
-    width: 100%;
+    margin-right: 50px;
 }
 
-.bottom-bar > .right > .bar-teams > .team > .name {
+.bottom-bar > .right > .bar-teams > .names-wrapper > .team > .name {
     font-size: 56px;
 }
 
-.bottom-bar > .right > .bar-teams > .team > .score {
+.bottom-bar > .right > .bar-teams > .names-wrapper > .team > .score {
     font-size: 56px;
     font-weight: 900;
     color: var(--seafoam);
-    margin-left: 1ch;
+    width: 1.75ch;
+    text-align: right;
 }
 
 .bottom-bar > .right > .next-stage > .bg-image {

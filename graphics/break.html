@@ -29,16 +29,32 @@
                     <fitted-text class="timer" text="In ~5 Minutes" max-width="900"></fitted-text>
                 </div>
             </div>
-            <div class="break-bottom-bar">Bottom Bar</div>
+            <div class="break-bottom-bar">
+                <div class="wrapper">
+                    <div class="group"><img src="assets/svg/ipl-powered.svg" style="height: 56px;"></div>
+                    <div class="group"><img src="assets/svg/globe.svg">iplabs.ink</div>
+                    <div class="group"><img src="assets/svg/twitter.svg">@IPLSplatoon</div>
+                    <div class="group"><img src="assets/svg/discord.svg">iplabs.ink/discord</div>
+                </div>
+                <div class="wrapper">
+                    <div class="group"><img src="assets/svg/mic.svg">Placeholder</div>
+                </div>
+                <div class="wrapper">
+                    <div class="group"><img src="assets/svg/trophy.svg">See bracket standings with !bracket</div>
+                </div>
+                <div class="wrapper">
+                    <div class="group"><img src="assets/svg/music.svg"><fitted-text text="Artist - Title" max-width="1420"></fitted-text></div>
+                </div>
+            </div>
         </div>
         <div style="height: 540px"></div>
         <div class="content-wrapper game-info-wrapper">
             <div class="game-info teams-wrapper" style="display: none;">
                 <div class="team-box team-left">
-                    <img class="image" src="assets/stages/S2_Stage_Ancho-V_Games.png">
-                    <fitted-text class="name" text="Team A Longer name test" max-width="380" align="right"></fitted-text>
+                    <img class="image" src="assets/stages/S2_Stage_Ancho-V_Games.png" id="team-a-image">
+                    <fitted-text class="name" text="Team A Longer name test" max-width="380" align="right" id="team-a-name"></fitted-text>
                     <div class="divider"></div>
-                    <div class="roster">
+                    <div class="roster" id="team-a-roster">
                         <fitted-text class="player" text="Player" max-width="380"></fitted-text>
                         <fitted-text class="player" text="Player" max-width="380"></fitted-text>
                         <fitted-text class="player" text="Player" max-width="380"></fitted-text>
@@ -46,14 +62,14 @@
                     </div>
                 </div>
                 <div class="score">
-                    <div class="score-text">2 - 1</div>
-                    <div class="score-info">3 games</div>
+                    <div class="score-text" id="teams-screen-score">2 - 1</div>
+                    <div class="score-info" id="teams-screen-game-num">3 games</div>
                 </div>
                 <div class="team-box team-right">
-                    <img class="image" src="assets/stages/S2_Stage_Ancho-V_Games.png">
-                    <fitted-text class="name" text="Team B Longer name test" max-width="380"></fitted-text>
+                    <img class="image" src="assets/stages/S2_Stage_Ancho-V_Games.png" id="team-b-image">
+                    <fitted-text class="name" text="Team B Longer name test" max-width="380" id="team-b-name"></fitted-text>
                     <div class="divider"></div>
-                    <div class="roster">
+                    <div class="roster" id="team-b-roster">
                         <fitted-text class="player" text="Player" max-width="380"></fitted-text>
                         <fitted-text class="player" text="Player" max-width="380"></fitted-text>
                         <fitted-text class="player" text="Player" max-width="380"></fitted-text>
@@ -100,10 +116,24 @@
             </div>
             <div class="bottom-bar">
                 <div class="half left">
-                    Lorem ipsum dolor
+                    <div class="wrapper">
+                        <img src="assets/svg/mic-light.svg">
+                        <div class="stack">
+                            <fitted-text max-width="600" text="Person 1 has a really long name"></fitted-text> 
+                            <fitted-text max-width="600" text="Person 2"></fitted-text> 
+                        </div>
+                    </div>
+                    <div class="wrapper">
+                        <div style="width: 50px;"></div>
+                        <div>You're watching Swim or Sink</div>
+                    </div>
+                    <div class="wrapper">
+                        <img src="assets/svg/music-light.svg">
+                        <fitted-text max-width="600" text="Artist - Song"></fitted-text> 
+                    </div>
                 </div>
                 <div class="half right">
-                    <div class="next-stage wrapper">
+                    <div class="next-stage wrapper" style="display: none;">
                         <img class="bg-image" src="assets/stages/S3_Stage_Scorch_Gorge.jpg">
                         <div class="text">
                             <div class="subtext">Next Stage</div>
@@ -111,15 +141,17 @@
                         </div>
                     </div>
                     <div class="bar-teams wrapper" style="display: none;">
-                        <img class="img-left" src="assets/stages/S2_Stage_Ancho-V_Games.png">
-                        <img class="img-right" src="assets/stages/S2_Stage_Blackbelly_Skatepark.png">
-                        <div class="team">
-                            <fitted-text class="name" text="Team A really really really long" max-width="600"></fitted-text>
-                            <div class="score">2</div>
-                        </div>
-                        <div class="team">
-                            <fitted-text class="name" text="Team B" max-width="600"></fitted-text>
-                            <div class="score">1</div>
+                        <img class="img-left" src="assets/stages/S2_Stage_Ancho-V_Games.png" id="bar-team-a-image">
+                        <img class="img-right" src="assets/stages/S2_Stage_Blackbelly_Skatepark.png" id="bar-team-b-image">
+                        <div class="names-wrapper">
+                            <div class="team">
+                                <fitted-text class="name" text="Team A really really really long" max-width="600" id="bar-team-a-name"></fitted-text>
+                                <div class="score" id="bar-team-a-score">2</div>
+                            </div>
+                            <div class="team">
+                                <fitted-text class="name" text="Team B" max-width="600" id="bar-team-b-name"></fitted-text>
+                                <div class="score" id="bar-team-b-score">1</div>
+                            </div>
                         </div>
                     </div>
                 </div>

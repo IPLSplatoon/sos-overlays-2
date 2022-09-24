@@ -23,18 +23,28 @@ const fadeOut = {
     ease: "power2.in"
 }
 
+NodeCG.waitForReplicants(activeBreakScene).then(() => {
+    if (activeBreakScene.value == "teams" || activeBreakScene.value == "stages"){
+        changeScene(activeBreakScene.value, "main", .2);
+    }
+});
+
 activeBreakScene.on('change', (newValue, oldValue) => {
+    changeScene(newValue, oldValue)
+});
+
+function changeScene(newValue, oldValue, durMulti = 1){
     switch(oldValue){
         case "main":
             sceneTl.add(hideMain());
-            sceneTl.add(shiftDown());
+            sceneTl.add(shiftDown(durMulti));
             break;
 
         case "teams":
             sceneTl.add(hideTeams());
             if (newValue == "main"){
                 sceneTl.add(hideBottomBar(), "<");
-                sceneTl.add(shiftUp());
+                sceneTl.add(shiftUp(durMulti));
             }
             break;
 
@@ -42,7 +52,7 @@ activeBreakScene.on('change', (newValue, oldValue) => {
             sceneTl.add(hideStages());
             if (newValue == "main"){
                 sceneTl.add(hideBottomBar(), "<");
-                sceneTl.add(shiftUp());
+                sceneTl.add(shiftUp(durMulti));
             }
     }
 
@@ -65,14 +75,14 @@ activeBreakScene.on('change', (newValue, oldValue) => {
             }
             
     }
-});
+}
 
-function shiftUp() : gsap.core.Timeline {
+function shiftUp(durMulti: number) : gsap.core.Timeline {
     const tl = gsap.timeline();
 
     tl.to(
         '.scrolling-container', {
-            duration: 2,
+            duration: 2 * durMulti,
             ease: "power2.inOut",
             y: 0
         }
@@ -81,12 +91,12 @@ function shiftUp() : gsap.core.Timeline {
     return tl;
 }
 
-function shiftDown() : gsap.core.Timeline {
+function shiftDown(durMulti: number) : gsap.core.Timeline {
     const tl = gsap.timeline();
 
     tl.to(
         '.scrolling-container', {
-            duration: 2,
+            duration: 2 * durMulti,
             ease: "power2.inOut",
             y: -1080-540
         }
@@ -150,6 +160,14 @@ function showTeams() : gsap.core.Timeline {
             wrapper.style.display = "flex";
         }
     });
+    tl.fromTo(".bottom-bar > .right > .next-stage", {
+        opacity: 0
+    }, {
+        opacity: 1,
+        duration: .4,
+        ease: "power2.out",
+        display: "flex"
+    }, "<");
     return tl;
 }
 
@@ -163,6 +181,12 @@ function hideTeams() : gsap.core.Timeline {
             wrapper.style.display = "none";
         }
     });
+    tl.to(".bottom-bar > .right > .next-stage", {
+        opacity: 0,
+        ease: "power2.in",
+        duration: .4,
+        display: "none"
+    }, "<")
     return tl;
 }
 
@@ -180,6 +204,15 @@ function showStages() : gsap.core.Timeline {
             wrapper.style.display = "flex";
         }
     });
+    tl.fromTo(".bottom-bar > .right > .bar-teams", {
+        opacity: 0
+    }, {
+        opacity: 1,
+        duration: .4,
+        ease: "power2.out",
+        display: "flex"
+    }, "<");
+    
     return tl;
 }
 
@@ -195,6 +228,12 @@ function hideStages() : gsap.core.Timeline {
             wrapper.style.display = "none";
         }
     });
+    tl.to(".bottom-bar > .right > .bar-teams", {
+        opacity: 0,
+        ease: "power2.in",
+        duration: .4,
+        display: "none"
+    }, "<")
     return tl;
 }
 

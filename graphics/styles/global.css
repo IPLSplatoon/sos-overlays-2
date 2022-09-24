@@ -21,15 +21,15 @@ body {
 
 @font-face {
     font-family: glock;
-    src: url(../fonts/glock.ttf);
+    src: url(../assets/fonts/glock.ttf);
 }
 
 @font-face {
     font-family: dosis;
-    src: url(../fonts/dosis.ttf);
+    src: url(../assets/fonts/dosis.ttf);
 }
 
 @font-face {
     font-family: sourcesanspro;
-    src: url(../fonts/sourcesanspro.ttf);
+    src: url(../assets/fonts/sourcesanspro.ttf);
 }
