@@ -18,14 +18,18 @@ activeRound.on("change", (newValue, oldValue) => {
             setPlayers(newValue.teamA.players, 'a');
             setTeamName(newValue.teamA.name, 'a');
             setTeamImage(newValue.teamA.logoUrl, 'a');
+            setScore(newValue.teamA.score, newValue.teamB.score, newValue.games.length);
         }
         if (newValue.teamB.name !== oldValue.teamB.name){
             setPlayers(newValue.teamB.players, 'b');
             setTeamName(newValue.teamB.name, 'b');
             setTeamImage(newValue.teamB.logoUrl, 'b');
+            setScore(newValue.teamA.score, newValue.teamB.score, newValue.games.length);
         }
         
-        if (newValue.teamA.score !== oldValue.teamA.score || newValue.teamB.score !== oldValue.teamB.score){
+        if (newValue.teamA.score !== oldValue.teamA.score 
+            || newValue.teamB.score !== oldValue.teamB.score
+            || newValue.games.length !== oldValue.games.length){
             setScore(newValue.teamA.score, newValue.teamB.score, newValue.games.length);
         }
     }
@@ -68,11 +72,13 @@ function setTeamImage(url: string, team: 'a' | 'b') : void{
         }
     });
 
-    tl.to([elim, barElim], {
-        opacity: 1,
-        ease: "power2.out",
-        duration: .25
-    }, "+=.5");
+    if (url != ''){
+        tl.to([elim, barElim], {
+            opacity: 1,
+            ease: "power2.out",
+            duration: .25
+        }, "+=.5");
+    }
 }
 
 function setPlayers(players, team: 'a' | 'b'): void {

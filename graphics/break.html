@@ -11,7 +11,7 @@
         <div class="content-wrapper break">
             <div class="break-half left">Logo Half</div>
             <div class="break-half right">
-                <fitted-text class="flavor-text" max-width="900" text="Be right back! This text won't fit!"></fitted-text>
+                <fitted-text class="flavor-text" max-width="900" text="Be right back!"></fitted-text>
                 <div style="height: 50px;"></div>
                 <div class="up-next-wrapper">
                     <div class="header">Up Next</div>
@@ -26,7 +26,9 @@
                         <div class="stage" style="background: var(--gradient), url('assets/stages/S3_Stage_Mincemeat_Metalworks.png')">RM</div>
                         <div class="stage more-stages">+2</div>
                     </div>
-                    <fitted-text class="timer" text="In ~5 Minutes" max-width="900"></fitted-text>
+                    <fitted-text class="timer" text="In ~5 Minutes" max-width="900" use-inner-html>
+                        <img src="assets/svg/clock.svg">
+                    </fitted-text>
                 </div>
             </div>
             <div class="break-bottom-bar">
@@ -81,7 +83,7 @@
                     </div>
                 </div>
             </div>
-            <div class="game-info stages-wrapper" style="display: none;">
+            <div class="game-info stages-wrapper" style="display: none;" id="stage-wrapper">
                 <div class="stage finished" style="background: var(--gradient), url('assets/stages/S3_Stage_Eeltail_Alley.jpg')">
                     <div class="winner">Winner Name</div>
                     <div class="info-container">
@@ -133,11 +135,11 @@
                     </div>
                 </div>
                 <div class="half right">
-                    <div class="next-stage wrapper" style="display: none;">
-                        <img class="bg-image" src="assets/stages/S3_Stage_Scorch_Gorge.jpg">
+                    <div class="next-stage wrapper" style="display: none;" id="next-stage">
+                        <img class="bg-image" id="next-stage-image" src="assets/stages/S3_Stage_Scorch_Gorge.jpg">
                         <div class="text">
                             <div class="subtext">Next Stage</div>
-                            <fitted-text class="stage-name" text="Scorch Gorge" max-width="600"></fitted-text>
+                            <fitted-text class="stage-name" text="Scorch Gorge" max-width="600" id="next-stage-name"></fitted-text>
                         </div>
                     </div>
                     <div class="bar-teams wrapper" style="display: none;">

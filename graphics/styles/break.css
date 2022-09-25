@@ -1,5 +1,5 @@
 :root{
-    font-family: dosis;
+    font-family: dosis, sourcesanspro, arial;
     color: var(--blue-grey);
     font-size: 64px;
 }
@@ -117,7 +117,7 @@
 .break-bottom-bar > .wrapper {
     display: flex;
     justify-content: space-evenly;
-    align-items: flex-end;
+    align-items: center;
     width: 100%;
     height: 56px;
     padding: 0 150px;
@@ -362,7 +362,7 @@
 }
 
 .bottom-bar > .right > .bar-teams > img {
-    width: 280px;
+    width: 250px;
     height: 150px;
     position: absolute;
     object-fit: cover;
@@ -372,7 +372,7 @@
 }
 
 .bottom-bar > .right > .bar-teams > .img-left {
-    right: 250px;
+    right: 260px;
 }
 
 .bottom-bar > .right > .bar-teams > .img-right {
@@ -382,13 +382,13 @@
 .bottom-bar > .right > .bar-teams > .names-wrapper > .team {
     display: flex;
     justify-content: flex-end;
-    z-index: 1;
     line-height: 110%;
     margin-right: 50px;
 }
 
 .bottom-bar > .right > .bar-teams > .names-wrapper > .team > .name {
     font-size: 56px;
+    z-index: 2;
 }
 
 .bottom-bar > .right > .bar-teams > .names-wrapper > .team > .score {
@@ -396,6 +396,7 @@
     font-weight: 900;
     color: var(--seafoam);
     width: 1.75ch;
+    z-index: 2;
     text-align: right;
 }
 
