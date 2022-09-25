@@ -3,7 +3,7 @@ import { getPlayerElement } from '../helpers/elements.js';
 import gsap from '../../../node_modules/gsap/all.js';
 
 activeRound.on("change", (newValue, oldValue) => {
-    console.log(newValue, oldValue);
+    //console.log(newValue, oldValue);
     if (oldValue === undefined){ 
         setPlayers(newValue.teamA.players, 'a');
         setTeamName(newValue.teamA.name, 'a');

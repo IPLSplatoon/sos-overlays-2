@@ -28,7 +28,7 @@ function initBreakBottomBar() {
             x: -50,
             duration: .4,
             ease: "power2.in"
-        }, `+=${6 + e.children.length}`);
+        }, "+=7");
     }
 }
 function initBottomBar() {
@@ -36,9 +36,12 @@ function initBottomBar() {
         repeat: -1
     });
     const elements = document.querySelectorAll(".bottom-bar > .left > .wrapper");
+    const castersNamesStack = document.getElementById("casters-name-stack");
+    const castersSocialsStack = document.getElementById("casters-socials-stack");
     for (var i = 0; i < elements.length; i++) {
         const e = elements[i];
         e.style.display = "none";
+        const casters = e.id == "casters-bottom-bar";
         bottomBarTl.fromTo(e, {
             display: "none",
             opacity: 0,
@@ -50,13 +53,30 @@ function initBottomBar() {
             duration: .6,
             ease: "power2.out"
         });
+        if (casters) {
+            bottomBarTl.to(castersNamesStack, {
+                opacity: 0,
+                duration: .3,
+                display: "none",
+                ease: "power2.out"
+            }, "+=4.75")
+                .fromTo(castersSocialsStack, {
+                display: "none",
+                opacity: 0
+            }, {
+                display: "flex",
+                opacity: 1,
+                duration: .2,
+                ease: "power2.in"
+            });
+        }
         bottomBarTl.to(e, {
             display: "none",
             opacity: 0,
             y: -5,
             duration: .4,
             ease: "power2.in"
-        }, "+=7");
+        }, !casters ? "+=7" : "+=10");
     }
 }
 //# sourceMappingURL=anim.js.map

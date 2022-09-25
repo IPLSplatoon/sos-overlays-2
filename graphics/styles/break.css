@@ -102,6 +102,14 @@
     font-weight: 900;
     font-size: 48px;
     width: fit-content;
+    display: flex;
+    align-items: center;
+}
+
+.up-next-wrapper > .timer > div > div > img{
+    height: 48px;
+    width: auto;
+    margin-right: .5ch;
 }
 
 .break-bottom-bar {
@@ -137,6 +145,13 @@
     margin-right: .75ch;
 }
 
+.break-bottom-bar > .wrapper > .group > .caster-wrapper{
+    display: flex;
+}
+
+.break-bottom-bar > .wrapper > .group > .caster-wrapper:not(:first-of-type){
+    margin-left: 1.5ch;
+}
 
 /* Teams/Stages Screen */
 
@@ -382,22 +397,24 @@
 .bottom-bar > .right > .bar-teams > .names-wrapper > .team {
     display: flex;
     justify-content: flex-end;
-    line-height: 110%;
     margin-right: 50px;
 }
 
 .bottom-bar > .right > .bar-teams > .names-wrapper > .team > .name {
     font-size: 56px;
     z-index: 2;
+    line-height: 110%;
+    margin-right: 25px;
 }
 
 .bottom-bar > .right > .bar-teams > .names-wrapper > .team > .score {
     font-size: 56px;
     font-weight: 900;
+    line-height: 110%;
     color: var(--seafoam);
-    width: 1.75ch;
+    width: 1ch;
     z-index: 2;
-    text-align: right;
+    text-align: center;
 }
 
 .bottom-bar > .right > .next-stage > .bg-image {

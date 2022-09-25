@@ -3,15 +3,21 @@ import { getMapElement } from '../helpers/elements.js';
 import { mapNameToImagePath } from "../helpers/constants.js";
 import gsap from '../../../node_modules/gsap/all.js';
 
-activeRound.on("change", (newValue, oldValue) => {
-    if (oldValue === undefined || stagesChanged(oldValue.games, newValue.games)){ 
-        setStages(newValue.games);
-        NodeCG.waitForReplicants(activeRound).then(() => {
+NodeCG.waitForReplicants(activeRound).then(() => {
+    updateScores(activeRound.value);
+    setStages(activeRound.value.games);
+
+    activeRound.on("change", (newValue, oldValue) => {
+        if (oldValue === undefined){
+            return;
+        }
+
+        if (stagesChanged(oldValue.games, newValue.games)){ 
+            setStages(newValue.games);
+        } else if (newValue.teamA.score !== oldValue.teamA.score || newValue.teamB.score !== oldValue.teamB.score){
             updateScores(newValue);
-        });
-    } else if (newValue.teamA.score !== oldValue.teamA.score || newValue.teamB.score !== oldValue.teamB.score){
-        updateScores(newValue);
-    }
+        }
+    });
 });
 
 function stagesChanged(oldGames, newGames) : boolean {

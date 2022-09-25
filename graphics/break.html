@@ -26,27 +26,39 @@
                         <div class="stage" style="background: var(--gradient), url('assets/stages/S3_Stage_Mincemeat_Metalworks.png')">RM</div>
                         <div class="stage more-stages">+2</div>
                     </div>
-                    <fitted-text class="timer" text="In ~5 Minutes" max-width="900" use-inner-html>
-                        <img src="assets/svg/clock.svg">
-                    </fitted-text>
+                    <fitted-text class="timer" text='<div style="display: flex; align-items: center"><img src="assets/svg/clock.svg"><div id="next-round-timer">In ~5 Minutes</div></div>' max-width="900" use-inner-html></fitted-text>
                 </div>
             </div>
             <div class="break-bottom-bar">
-                <div class="wrapper">
+                <!-- <div class="wrapper">
                     <div class="group"><img src="assets/svg/ipl-powered.svg" style="height: 56px;"></div>
                     <div class="group"><img src="assets/svg/globe.svg">iplabs.ink</div>
                     <div class="group"><img src="assets/svg/twitter.svg">@IPLSplatoon</div>
                     <div class="group"><img src="assets/svg/discord.svg">iplabs.ink/discord</div>
-                </div>
+                </div> -->
                 <div class="wrapper">
-                    <div class="group"><img src="assets/svg/mic.svg">Placeholder</div>
+                    <div class="group">
+                        <img src="assets/svg/mic.svg">
+                        <div class="caster-wrapper" id="caster-1-main-wrapper">
+                            <b><fitted-text max-width="350" text="CasterA" id="caster-1-main-name"></fitted-text></b>&nbsp;
+                            <fitted-text max-width="350" text="@CasterA" id="caster-1-main-social"></fitted-text>
+                        </div>
+                        <div class="caster-wrapper" id="caster-2-main-wrapper">
+                            <b><fitted-text max-width="350" text="CasterB" id="caster-2-main-name"></fitted-text></b>&nbsp;
+                            <fitted-text max-width="350" text="@CasterB" id="caster-2-main-social"></fitted-text>
+                        </div>
+                        <div class="caster-wrapper" id="caster-3-main-wrapper">
+                            <b><fitted-text max-width="350" text="CasterC" id="caster-3-main-name"></fitted-text></b>&nbsp;
+                            <fitted-text max-width="350" text="@CasterC" id="caster-3-main-social"></fitted-text>
+                        </div>
+                    </div>
                 </div>
-                <div class="wrapper">
-                    <div class="group"><img src="assets/svg/trophy.svg">See bracket standings with !bracket</div>
+                <!-- <div class="wrapper">
+                    <div class="group"><img src="assets/svg/trophy.svg">See bracket standings with&nbsp;<b>!bracket</b></div>
                 </div>
                 <div class="wrapper">
                     <div class="group"><img src="assets/svg/music.svg"><fitted-text text="Artist - Title" max-width="1420"></fitted-text></div>
-                </div>
+                </div> -->
             </div>
         </div>
         <div style="height: 540px"></div>
@@ -118,11 +130,17 @@
             </div>
             <div class="bottom-bar">
                 <div class="half left">
-                    <div class="wrapper">
+                    <div class="wrapper" id="casters-bottom-bar">
                         <img src="assets/svg/mic-light.svg">
-                        <div class="stack">
-                            <fitted-text max-width="600" text="Person 1 has a really long name"></fitted-text> 
-                            <fitted-text max-width="600" text="Person 2"></fitted-text> 
+                        <div class="stack" style="font-size: .75em;" id="casters-name-stack">
+                            <fitted-text max-width="600" text="Person 1 has a really long name" id="caster-1-name"></fitted-text> 
+                            <fitted-text max-width="600" text="Person 2" id="caster-2-name"></fitted-text> 
+                            <fitted-text max-width="600" text="Person 2" id="caster-3-name"></fitted-text> 
+                        </div>
+                        <div class="stack" style="font-size: .75em;" id="casters-socials-stack" style="display: none;">
+                            <fitted-text max-width="600" text="test" id="caster-1-social"></fitted-text> 
+                            <fitted-text max-width="600" text="test" id="caster-2-social"></fitted-text> 
+                            <fitted-text max-width="600" text="test" id="caster-3-social"></fitted-text> 
                         </div>
                     </div>
                     <div class="wrapper">
