@@ -48,6 +48,8 @@ function shorthandMode(mode) {
             return "RM";
         case "Clam Blitz":
             return "CB";
+        default:
+            return "";
     }
 }
 export function getMoreStagesElement(num) {

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="148"
+   height="78"
+   viewBox="0 0 148 78"
+   fill="none"
+   version="1.1"
+   id="svg6"
+   sodipodi:docname="team-bubbles-bottom-left.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs10">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect950"
+       is_visible="true"
+       lpeversion="1"
+       satellites_param="F,0,0,1,0,30,0,1 @ F,0,0,1,0,30,0,1 @ F,0,0,1,0,30,0,1 @ F,0,0,1,0,30,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="30"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview8"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="2.6516504"
+     inkscape:cx="168.00857"
+     inkscape:cy="-49.02607"
+     inkscape:window-width="2560"
+     inkscape:window-height="1369"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg6" />
+  <path
+     id="circle2"
+     style="fill:#d3f7e7"
+     d="M 28.5 0 A 28.5 28.5 0 0 0 0 28.5 A 28.5 28.5 0 0 0 28.5 57 A 28.5 28.5 0 0 0 48.28125 48.921875 A 30 30 0 0 1 38.84375 27.322266 L 38.84375 1.953125 A 28.5 28.5 0 0 0 28.5 0 z " />
+  <path
+     id="circle4"
+     style="fill:#d3f7e7"
+     d="M 121.73633 57.322266 A 14 14 0 0 0 120 64 A 14 14 0 0 0 134 78 A 14 14 0 0 0 148 64 A 14 14 0 0 0 146.30273 57.322266 L 121.73633 57.322266 z " />
+</svg>

@@ -1,6 +1,14 @@
 import { activeRound } from '../helpers/replicants.js';
 import { getPlayerElement } from '../helpers/elements.js';
 import gsap from '../../../node_modules/gsap/all.js';
+NodeCG.waitForReplicants(activeRound).then(() => {
+    if (!activeRound.value.teamA.showLogo) {
+        setTeamImage('', 'a');
+    }
+    if (!activeRound.value.teamB.showLogo) {
+        setTeamImage('', 'b');
+    }
+});
 activeRound.on("change", (newValue, oldValue) => {
     if (oldValue === undefined) {
         setPlayers(newValue.teamA.players, 'a');

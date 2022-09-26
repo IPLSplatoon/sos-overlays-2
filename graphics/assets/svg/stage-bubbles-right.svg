@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="142"
+   height="142"
+   viewBox="0 0 142 142"
+   fill="none"
+   version="1.1"
+   id="svg12"
+   sodipodi:docname="stage-bubbles-right.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs16">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect956"
+       is_visible="true"
+       lpeversion="1"
+       satellites_param="F,0,0,1,0,30,0,1 @ F,0,0,1,0,30,0,1 @ F,0,0,1,0,30,0,1 @ F,0,0,1,0,30,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="30"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect956-3"
+       is_visible="true"
+       lpeversion="1"
+       satellites_param="F,0,0,1,0,30,0,1 @ F,0,0,1,0,30,0,1 @ F,0,0,1,0,30,0,1 @ F,0,0,1,0,30,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="30"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview14"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="2.3098592"
+     inkscape:cx="-27.92378"
+     inkscape:cy="72.29878"
+     inkscape:window-width="2560"
+     inkscape:window-height="1369"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg12" />
+  <path
+     id="circle2"
+     style="fill:#d3f7e7"
+     d="M 72.5 0 A 27.5 27.5 0 0 0 71 0.10742188 L 71 54.892578 A 27.5 27.5 0 0 0 72.5 55 A 27.5 27.5 0 0 0 100 27.5 A 27.5 27.5 0 0 0 72.5 0 z " />
+  <path
+     id="circle4"
+     style="fill:#d3f7e7"
+     d="M 47.869141 96.15625 A 30 30 0 0 1 41 96.976562 L 0.91015625 96.976562 A 24.5 24.5 0 0 0 0 103.5 A 24.5 24.5 0 0 0 24.5 128 A 24.5 24.5 0 0 0 49 103.5 A 24.5 24.5 0 0 0 47.869141 96.15625 z " />
+  <circle
+     cx="122.5"
+     cy="97.5"
+     r="19.5"
+     fill="#D3F7E7"
+     id="circle6" />
+  <circle
+     cx="132.5"
+     cy="10.5"
+     r="7.5"
+     fill="#D3F7E7"
+     id="circle8" />
+  <circle
+     cx="72.5"
+     cy="136.5"
+     r="5.5"
+     fill="#D3F7E7"
+     id="circle10" />
+</svg>

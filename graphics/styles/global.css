@@ -33,3 +33,24 @@ body {
     font-family: sourcesanspro;
     src: url(../assets/fonts/sourcesanspro.ttf);
 }
+
+.pronouns-dark, .pronouns-light{
+    font-size: .6em;
+    padding: 0 .2em;
+    height: 1.05em;
+    line-height: 1em;
+    border-radius: .2em;
+    font-family: sourcesanspro;
+    transform: scaleX(.9) translateY(-.125em);
+    transform-origin: left;
+}
+
+.pronouns-light {
+    background: var(--seafoam);
+    color: var(--dark-blue);
+}
+
+.pronouns-dark {
+    background: var(--dark-teal);
+    color: white;
+}

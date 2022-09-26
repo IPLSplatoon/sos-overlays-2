@@ -13,6 +13,7 @@ NodeCG.waitForReplicants(nextRound).then(() => {
 });
 
 nextRound.on('change', (newValue, oldValue) => {
+    console.log(newValue);
     if (oldValue === undefined || newValue.showOnStream !== oldValue.showOnStream){
         showUpNext(newValue.showOnStream);
     } else if (newValue.teamA.name !== oldValue.teamA.name
@@ -75,26 +76,34 @@ function showUpNext(show: boolean){
     }
 }
 
-function setNextRound(nextRound){
-    tl.to(wrapper, {
-        opacity: 0,
-        duration: .35,
-        ease: "power2.out",
-        onComplete: function(){
-            teamA.setAttribute("text", nextRound.teamA.name);
-            teamB.setAttribute("text", nextRound.teamB.name);
-            stageWrapper.innerHTML = "";
-            for (var i = 0; i < Math.min(nextRound.games.length, 3); i++){
-                stageWrapper.appendChild(getNextMatchMapElement(nextRound.games[i].stage, nextRound.games[i].mode));
+function setNextRound(round){
+    if (nextRound.value.showOnStream){
+        tl.to(wrapper, {
+            opacity: 0,
+            duration: .35,
+            ease: "power2.out",
+            onComplete: function(){
+                changeTeams(round);
             }
-            if (nextRound.games.length > 3){
-                stageWrapper.appendChild(getMoreStagesElement((nextRound.games.length - 3).toString()));
-            }
-        }
-    })
-    .to(wrapper, {
-        opacity: 1,
-        duration: .35,
-        ease: "power2.in"
-    });
+        })
+        .to(wrapper, {
+            opacity: 1,
+            duration: .35,
+            ease: "power2.in"
+        });
+    } else {
+        changeTeams(round);
+    }
+}
+
+function changeTeams(round){
+    teamA.setAttribute("text", round.teamA.name);
+    teamB.setAttribute("text", round.teamB.name);
+    stageWrapper.innerHTML = "";
+    for (var i = 0; i < Math.min(round.games.length, 3); i++){
+        stageWrapper.appendChild(getNextMatchMapElement(round.games[i].stage, round.games[i].mode));
+    }
+    if (round.games.length > 3){
+        stageWrapper.appendChild(getMoreStagesElement((round.games.length - 3).toString()));
+    }
 }

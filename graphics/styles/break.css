@@ -1,6 +1,6 @@
 :root{
     font-family: dosis, sourcesanspro, arial;
-    color: var(--blue-grey);
+    color: var(--dark-teal);
     font-size: 64px;
 }
 
@@ -73,7 +73,7 @@
 }
 
 .up-next-wrapper > .detail {
-    font-weight: 900;
+    font-weight: 700;
     line-height: 110%;
     width: fit-content;
     display: flex;
@@ -100,7 +100,7 @@
     display: flex;
     align-items: center;
     color: var(--seafoam);
-    font-weight: 900;
+    font-weight: 700;
     font-size: 32px;
     background-position: center;
 
@@ -122,7 +122,7 @@
 }
 
 .up-next-wrapper > .timer {
-    font-weight: 900;
+    font-weight: 700;
     font-size: 48px;
     width: fit-content;
     display: flex;
@@ -173,7 +173,7 @@
 }
 
 .break-bottom-bar > .wrapper > .group > .caster-wrapper:not(:first-of-type){
-    margin-left: 1.5ch;
+    margin-left: 1.8ch;
 }
 
 /* Teams/Stages Screen */
@@ -190,6 +190,7 @@
     justify-content: center;
     align-items: center;
     width: 1920px;
+    z-index: 1;
 }
 
 .team-box{
@@ -198,25 +199,7 @@
     background: linear-gradient(0deg, var(--dark-blue) 0%, var(--blue-grey) 175%);
     outline: 5px solid var(--seafoam);
     border-radius: 30px;
-    z-index: 1;
-}
-
-.team-box > .image {
-    z-index: 2;
-    position: absolute;
-    --angle: 90deg;
-    -webkit-mask-image: linear-gradient(var(--angle), rgba(0,0,0,.65) , rgba(0,0,0,0));
-    mask-image: linear-gradient(var(--angle), rgba(0,0,0,.65), rgba(0,0,0,0));
-    object-fit: cover;
-    height: 150px;
-    width: 200px;
-    border-radius: 30px 0 0 0;
-}
-
-.team-right > .image{
-    transform: translateX(250px);
-    border-radius: 0 30px 0 0;
-    --angle: 270deg;
+    transform-style: preserve-3d;
 }
 
 .team-box > .name {
@@ -227,6 +210,47 @@
     font-size: 72px;
     color: white;
     z-index: 3;
+}
+
+.team-box > .image {
+    z-index: 2;
+    position: absolute;
+    --angle: 90deg;
+    -webkit-mask: linear-gradient(var(--angle), rgba(0,0,0,.65), rgba(0,0,0,0));
+    object-fit: cover;
+    height: 150px;
+    width: 200px;
+    border-radius: 30px 0 0 0;
+}
+
+.team-left::before{
+    content: url('../assets/svg/team-bubbles-top-left.svg');
+    position: absolute;
+    transform: translate(-86px, -27px);
+}
+
+.team-left::after{
+    content: url('../assets/svg/team-bubbles-bottom-left.svg');
+    position: absolute;
+    transform: translate(-43px, -56px);
+}
+
+.team-right::before{
+    content: url('../assets/svg/team-bubbles-top-right.svg');
+    position: absolute;
+    transform: translate(365px, -30px);
+}
+
+.team-right::after{
+    content: url('../assets/svg/team-bubbles-bottom-right.svg');
+    position: absolute;
+    transform: translate(366px, -67px);
+}
+
+.team-right > .image{
+    transform: translateX(250px);
+    border-radius: 0 30px 0 0;
+    --angle: 270deg;
 }
 
 .team-left > .name {
@@ -258,7 +282,7 @@
 }
 
 .team-box > .roster > .player {
-    font-weight: 900;
+    font-weight: 700;
     color: var(--seafoam);
     font-size: 40px;
 }
@@ -276,7 +300,7 @@
 }
 
 .teams-wrapper > .score > .score-info{
-    font-weight: 900;
+    font-weight: 700;
     font-size: 32px;
     color: var(--seafoam);
 }
@@ -303,12 +327,27 @@
     outline: 5px solid var(--seafoam);
     background-position: center !important;
     transition-duration: .35s;
+    position: relative;
 
     --gradient: linear-gradient(0deg, var(--dark-blue) -10%, #00000000 110%);
 }
 
+.game-info-wrapper > .stages-wrapper > .stage:first-child::after {
+    content: url('../assets/svg/stage-bubbles-left.svg');
+    position: absolute;
+    top: -81px;
+    left: -83px;
+}
+
+.game-info-wrapper > .stages-wrapper > .stage:last-child::after {
+    content: url('../assets/svg/stage-bubbles-right.svg');
+    position: absolute;
+    bottom: -57px;
+    right: -73px;
+}
+
 .game-info-wrapper > .stages-wrapper > .next {
-    padding: 40px 25px;
+    padding: 65px 35px 15px 15px;
 }
 
 .game-info-wrapper > .stages-wrapper > .finished {
@@ -326,7 +365,7 @@
 .game-info-wrapper > .stages-wrapper > .stage > .winner {
     position: absolute;
     font-size: 1em;
-    font-weight: 900;
+    font-weight: 700;
     color: white;
 }
 
@@ -340,12 +379,13 @@
 
 .game-info-wrapper > .stages-wrapper > .stage > .info-container > .mode {
     font-size: 1em;
-    font-weight: 900;
+    font-weight: 700;
     color: var(--seafoam);
 }
 
 .game-info-wrapper > .stages-wrapper > .stage > .info-container > .map {
     font-size: 1.3em;
+    line-height: 110%;
     color: white;
 }
 
@@ -441,7 +481,7 @@
 
 .bottom-bar > .right > .bar-teams > .names-wrapper > .team > .score {
     font-size: 56px;
-    font-weight: 900;
+    font-weight: 700;
     line-height: 110%;
     color: var(--seafoam);
     width: 1ch;
@@ -466,7 +506,7 @@
 
 .bottom-bar > .right > .next-stage > .text > .subtext {
     font-size: 40px;
-    font-weight: 900;
+    font-weight: 700;
     color: var(--seafoam);
     line-height: 110%;
 }

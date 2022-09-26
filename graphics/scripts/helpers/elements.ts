@@ -61,6 +61,8 @@ function shorthandMode(mode: string) : string {
             return "RM";
         case "Clam Blitz":
             return "CB";
+        default:
+            return "";
     }
 }
 
