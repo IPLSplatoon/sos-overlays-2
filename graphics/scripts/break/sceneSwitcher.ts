@@ -109,7 +109,7 @@ function showMain() : gsap.core.Timeline {
     const tl = gsap.timeline();
 
     tl.fromTo(".break > .left", fadeInStart, fadeInEnd);
-    tl.fromTo(".break > .right > .flavor-text", fadeInStart, fadeInEnd, "-=.2");
+    tl.fromTo("#main-scene-flavor-text", fadeInStart, fadeInEnd, "-=.2");
     tl.fromTo(".break > .right > .up-next-wrapper > .header", fadeInStart, fadeInEnd, "-=.4");
     tl.fromTo(".break > .right > .up-next-wrapper > .detail", fadeInStart, fadeInEnd, "-=.4");
     tl.fromTo(".break > .right > .up-next-wrapper > .stages-wrapper > *", fadeInStart, {...fadeInEnd, stagger: .1}, "-=.4");
@@ -202,6 +202,14 @@ function showStages() : gsap.core.Timeline {
         onStart: function(){
             const wrapper = document.querySelector(".game-info-wrapper > .stages-wrapper") as HTMLElement;
             wrapper.style.display = "flex";
+            for(var i = 0; i < stageElems.length; i++){
+                (stageElems[i] as HTMLElement).style.transitionDuration = "0s";
+            }
+        },
+        onComplete: function(){
+            for(var i = 0; i < stageElems.length; i++){
+                (stageElems[i] as HTMLElement).style.transitionDuration = ".35s";
+            }
         }
     });
     tl.fromTo(".bottom-bar > .right > .bar-teams", {
@@ -226,6 +234,14 @@ function hideStages() : gsap.core.Timeline {
         onComplete: function(){
             const wrapper = document.querySelector(".game-info-wrapper > .stages-wrapper") as HTMLElement;
             wrapper.style.display = "none";
+            for(var i = 0; i < stageElems.length; i++){
+                (stageElems[i] as HTMLElement).style.transitionDuration = ".35s";
+            }
+        },
+        onStart: function(){
+            for(var i = 0; i < stageElems.length; i++){
+                (stageElems[i] as HTMLElement).style.transitionDuration = "0s";
+            }
         }
     });
     tl.to(".bottom-bar > .right > .bar-teams", {

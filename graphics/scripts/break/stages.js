@@ -3,14 +3,9 @@ import { getMapElement } from '../helpers/elements.js';
 import { mapNameToImagePath } from "../helpers/constants.js";
 import gsap from '../../../node_modules/gsap/all.js';
 NodeCG.waitForReplicants(activeRound).then(() => {
-    updateScores(activeRound.value);
-    setStages(activeRound.value.games);
     activeRound.on("change", (newValue, oldValue) => {
-        if (oldValue === undefined) {
-            return;
-        }
-        if (stagesChanged(oldValue.games, newValue.games)) {
-            setStages(newValue.games);
+        if (oldValue === undefined || stagesChanged(oldValue.games, newValue.games)) {
+            setStages(newValue);
         }
         else if (newValue.teamA.score !== oldValue.teamA.score || newValue.teamB.score !== oldValue.teamB.score) {
             updateScores(newValue);
@@ -29,7 +24,8 @@ function stagesChanged(oldGames, newGames) {
     }
     return false;
 }
-function setStages(games) {
+function setStages(round) {
+    const games = round.games;
     const wrapper = document.getElementById("stage-wrapper");
     const tl = gsap.timeline();
     tl.to(wrapper, {
@@ -42,6 +38,17 @@ function setStages(games) {
                 const stage = getMapElement(games[i].stage, games[i].mode);
                 wrapper.appendChild(stage);
             }
+            switch (games.length) {
+                case 3:
+                    wrapper.style.fontSize = "46px";
+                    break;
+                case 5:
+                    wrapper.style.fontSize = "38px";
+                    break;
+                case 7:
+                    wrapper.style.fontSize = "32px";
+            }
+            updateScores(round);
         }
     });
     tl.to(wrapper, {
@@ -57,7 +64,11 @@ function updateScores(round) {
     const alphaName = round.teamA.name;
     const bravoName = round.teamB.name;
     for (var i = 0; i < games.length; i++) {
+        if (stageElims[i] === undefined) {
+            continue;
+        }
         const winnerElim = stageElims[i].querySelector(".winner");
+        stageElims[i].classList.remove("next");
         if (stageElims[i].classList.contains("finished") && games[i].winner == "none") {
             winnerElim.innerText = "";
             stageElims[i].classList.remove("finished");
@@ -71,6 +82,12 @@ function updateScores(round) {
                     winnerElim.innerText = bravoName;
             }
             stageElims[i].classList.add("finished");
+        }
+    }
+    for (var i = 0; i < games.length; i++) {
+        if (games[i].winner === "none") {
+            stageElims[i].classList.add("next");
+            break;
         }
     }
     const bottomBarNextStage = document.getElementById("next-stage");

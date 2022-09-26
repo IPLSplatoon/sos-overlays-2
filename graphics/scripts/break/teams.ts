@@ -3,7 +3,6 @@ import { getPlayerElement } from '../helpers/elements.js';
 import gsap from '../../../node_modules/gsap/all.js';
 
 activeRound.on("change", (newValue, oldValue) => {
-    //console.log(newValue, oldValue);
     if (oldValue === undefined){ 
         setPlayers(newValue.teamA.players, 'a');
         setTeamName(newValue.teamA.name, 'a');
@@ -31,6 +30,13 @@ activeRound.on("change", (newValue, oldValue) => {
             || newValue.teamB.score !== oldValue.teamB.score
             || newValue.games.length !== oldValue.games.length){
             setScore(newValue.teamA.score, newValue.teamB.score, newValue.games.length);
+        }
+
+        if (newValue.teamA.showLogo !== oldValue.teamA.showLogo){
+            setTeamImage(newValue.teamA.showLogo ? newValue.teamA.logoUrl : "", 'a');
+        }
+        if (newValue.teamB.showLogo !== oldValue.teamB.showLogo){
+            setTeamImage(newValue.teamB.showLogo ? newValue.teamB.logoUrl : "", 'b');
         }
     }
 });

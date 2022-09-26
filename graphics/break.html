@@ -7,72 +7,73 @@
     <script defer src="../node_modules/fitted-text/dist/fitted-text.js"></script>
 </head>
 <body>
+    <svg style="display: none;">
+        <filter id="turbulence" x="0" y="0" width="100%" height="100%">
+          <feTurbulence id="turb-freq" type="fractalNoise" numOctaves="1" seed="2" baseFrequency=".002"></feTurbulence>
+          <feDisplacementMap id="turb-displacement" scale="70" in="SourceGraphic"></feDisplacementMap>
+        </filter>
+    </svg>
     <div class="scrolling-container">
         <div class="content-wrapper break">
             <div class="break-half left">Logo Half</div>
             <div class="break-half right">
-                <fitted-text class="flavor-text" max-width="900" text="Be right back!"></fitted-text>
-                <div style="height: 50px;"></div>
-                <div class="up-next-wrapper">
+                <fitted-text class="flavor-text" max-width="900" text="" id="main-scene-flavor-text" use-inner-html></fitted-text>
+                <div class="up-next-wrapper" id="up-next-wrapper">
                     <div class="header">Up Next</div>
                     <div class="detail">
-                        <fitted-text max-width="900" text="Team A"></fitted-text>
+                        <fitted-text max-width="900" text="" id="next-match-team-a"></fitted-text>
                         vs&nbsp;
-                        <fitted-text max-width="900" text="Team B"></fitted-text>
+                        <fitted-text max-width="900" text="" id="next-match-team-b"></fitted-text>
                     </div>
-                    <div class="stages-wrapper">
+                    <div class="stages-wrapper" id="next-match-stages-wrapper">
                         <div class="stage" style="background: var(--gradient), url('assets/stages/S3_Stage_Eeltail_Alley.jpg')">SZ</div>
                         <div class="stage" style="background: var(--gradient), url('assets/stages/S3_Stage_Scorch_Gorge.jpg')">TC</div>
                         <div class="stage" style="background: var(--gradient), url('assets/stages/S3_Stage_Mincemeat_Metalworks.png')">RM</div>
                         <div class="stage more-stages">+2</div>
                     </div>
-                    <fitted-text class="timer" text='<div style="display: flex; align-items: center"><img src="assets/svg/clock.svg"><div id="next-round-timer">In ~5 Minutes</div></div>' max-width="900" use-inner-html></fitted-text>
+                    <fitted-text class="timer" id="main-scene-timer" text='<div style="display: flex; align-items: center"><img src="assets/svg/clock.svg"><div id="next-round-timer"></div></div>' max-width="900" use-inner-html></fitted-text>
                 </div>
             </div>
             <div class="break-bottom-bar">
-                <!-- <div class="wrapper">
+                <div class="wrapper">
                     <div class="group"><img src="assets/svg/ipl-powered.svg" style="height: 56px;"></div>
                     <div class="group"><img src="assets/svg/globe.svg">iplabs.ink</div>
                     <div class="group"><img src="assets/svg/twitter.svg">@IPLSplatoon</div>
                     <div class="group"><img src="assets/svg/discord.svg">iplabs.ink/discord</div>
-                </div> -->
+                </div>
                 <div class="wrapper">
                     <div class="group">
                         <img src="assets/svg/mic.svg">
                         <div class="caster-wrapper" id="caster-1-main-wrapper">
-                            <b><fitted-text max-width="350" text="CasterA" id="caster-1-main-name"></fitted-text></b>&nbsp;
-                            <fitted-text max-width="350" text="@CasterA" id="caster-1-main-social"></fitted-text>
+                            <b><fitted-text max-width="350" text="" id="caster-1-main-name"></fitted-text></b>&nbsp;
+                            <fitted-text max-width="350" text="" id="caster-1-main-social"></fitted-text>
                         </div>
                         <div class="caster-wrapper" id="caster-2-main-wrapper">
-                            <b><fitted-text max-width="350" text="CasterB" id="caster-2-main-name"></fitted-text></b>&nbsp;
-                            <fitted-text max-width="350" text="@CasterB" id="caster-2-main-social"></fitted-text>
+                            <b><fitted-text max-width="350" text="" id="caster-2-main-name"></fitted-text></b>&nbsp;
+                            <fitted-text max-width="350" text="" id="caster-2-main-social"></fitted-text>
                         </div>
                         <div class="caster-wrapper" id="caster-3-main-wrapper">
-                            <b><fitted-text max-width="350" text="CasterC" id="caster-3-main-name"></fitted-text></b>&nbsp;
-                            <fitted-text max-width="350" text="@CasterC" id="caster-3-main-social"></fitted-text>
+                            <b><fitted-text max-width="350" text="" id="caster-3-main-name"></fitted-text></b>&nbsp;
+                            <fitted-text max-width="350" text="" id="caster-3-main-social"></fitted-text>
                         </div>
                     </div>
                 </div>
-                <!-- <div class="wrapper">
+                <div class="wrapper">
                     <div class="group"><img src="assets/svg/trophy.svg">See bracket standings with&nbsp;<b>!bracket</b></div>
                 </div>
-                <div class="wrapper">
-                    <div class="group"><img src="assets/svg/music.svg"><fitted-text text="Artist - Title" max-width="1420"></fitted-text></div>
-                </div> -->
+                <div class="wrapper" id="music-main-bar">
+                    <div class="group"><img src="assets/svg/music.svg"><fitted-text text="" max-width="1420" id="main-music-title" use-inner-html></fitted-text></div>
+                </div>
             </div>
         </div>
         <div style="height: 540px"></div>
         <div class="content-wrapper game-info-wrapper">
             <div class="game-info teams-wrapper" style="display: none;">
                 <div class="team-box team-left">
-                    <img class="image" src="assets/stages/S2_Stage_Ancho-V_Games.png" id="team-a-image">
-                    <fitted-text class="name" text="Team A Longer name test" max-width="380" align="right" id="team-a-name"></fitted-text>
+                    <img class="image" src="" id="team-a-image">
+                    <fitted-text class="name" text="" max-width="380" align="right" id="team-a-name"></fitted-text>
                     <div class="divider"></div>
                     <div class="roster" id="team-a-roster">
-                        <fitted-text class="player" text="Player" max-width="380"></fitted-text>
-                        <fitted-text class="player" text="Player" max-width="380"></fitted-text>
-                        <fitted-text class="player" text="Player" max-width="380"></fitted-text>
-                        <fitted-text class="player" text="Player" max-width="380"></fitted-text>
                     </div>
                 </div>
                 <div class="score">
@@ -80,76 +81,37 @@
                     <div class="score-info" id="teams-screen-game-num">3 games</div>
                 </div>
                 <div class="team-box team-right">
-                    <img class="image" src="assets/stages/S2_Stage_Ancho-V_Games.png" id="team-b-image">
-                    <fitted-text class="name" text="Team B Longer name test" max-width="380" id="team-b-name"></fitted-text>
+                    <img class="image" src="" id="team-b-image">
+                    <fitted-text class="name" text="" max-width="380" id="team-b-name"></fitted-text>
                     <div class="divider"></div>
                     <div class="roster" id="team-b-roster">
-                        <fitted-text class="player" text="Player" max-width="380"></fitted-text>
-                        <fitted-text class="player" text="Player" max-width="380"></fitted-text>
-                        <fitted-text class="player" text="Player" max-width="380"></fitted-text>
-                        <fitted-text class="player" text="Player" max-width="380"></fitted-text>
-                        <fitted-text class="player" text="Player" max-width="380"></fitted-text>
-                        <fitted-text class="player" text="Player" max-width="380"></fitted-text>
-                        <fitted-text class="player" text="Player" max-width="380"></fitted-text>
-                        <fitted-text class="player" text="Player" max-width="380"></fitted-text>
                     </div>
                 </div>
             </div>
             <div class="game-info stages-wrapper" style="display: none;" id="stage-wrapper">
-                <div class="stage finished" style="background: var(--gradient), url('assets/stages/S3_Stage_Eeltail_Alley.jpg')">
-                    <div class="winner">Winner Name</div>
-                    <div class="info-container">
-                        <div class="mode">Splat Zones</div>
-                        <div class="map">Eeltail Alley</div>
-                    </div>
-                </div>
-                <div class="stage" style="background: var(--gradient), url('assets/stages/S3_Stage_Scorch_Gorge.jpg')">
-                    <div class="info-container">
-                        <div class="mode">Tower Control</div>
-                        <div class="map">Scorch Gorge</div>
-                    </div>
-                </div>
-                <div class="stage" style="background: var(--gradient), url('assets/stages/S3_Stage_Mincemeat_Metalworks.png');">
-                    <div class="info-container">
-                        <div class="mode">Rainmaker</div>
-                        <div class="map">Mincemeat Metalworks</div>
-                    </div>
-                </div>
-                <div class="stage" style="background: var(--gradient), url('assets/stages/S3_Stage_Hammerhead_Bridge.jpg');">
-                    <div class="info-container">
-                        <div class="mode">Clam Blitz</div>
-                        <div class="map">Hammerhead Bridge</div>
-                    </div>
-                </div>
-                <div class="stage" style="background: var(--gradient), url('assets/stages/S3_Stage_Hagglefish_Market.jpg');">
-                    <div class="info-container">
-                        <div class="mode">Not Turf War</div>
-                        <div class="map">Hagglefish Market</div>
-                    </div>
-                </div>
             </div>
             <div class="bottom-bar">
                 <div class="half left">
                     <div class="wrapper" id="casters-bottom-bar">
                         <img src="assets/svg/mic-light.svg">
-                        <div class="stack" style="font-size: .75em;" id="casters-name-stack">
-                            <fitted-text max-width="600" text="Person 1 has a really long name" id="caster-1-name"></fitted-text> 
-                            <fitted-text max-width="600" text="Person 2" id="caster-2-name"></fitted-text> 
-                            <fitted-text max-width="600" text="Person 2" id="caster-3-name"></fitted-text> 
+                        <div class="stack" id="casters-name-stack">
+                            <fitted-text max-width="600" text="" id="caster-1-name"></fitted-text> 
+                            <fitted-text max-width="600" text="" id="caster-2-name"></fitted-text> 
+                            <fitted-text max-width="600" text="" id="caster-3-name"></fitted-text> 
                         </div>
-                        <div class="stack" style="font-size: .75em;" id="casters-socials-stack" style="display: none;">
-                            <fitted-text max-width="600" text="test" id="caster-1-social"></fitted-text> 
-                            <fitted-text max-width="600" text="test" id="caster-2-social"></fitted-text> 
-                            <fitted-text max-width="600" text="test" id="caster-3-social"></fitted-text> 
+                        <div class="stack" id="casters-socials-stack">
+                            <fitted-text max-width="600" text="" id="caster-1-social"></fitted-text> 
+                            <fitted-text max-width="600" text="" id="caster-2-social"></fitted-text> 
+                            <fitted-text max-width="600" text="" id="caster-3-social"></fitted-text> 
                         </div>
                     </div>
                     <div class="wrapper">
                         <div style="width: 50px;"></div>
                         <div>You're watching Swim or Sink</div>
                     </div>
-                    <div class="wrapper">
+                    <div class="wrapper" id="music-bottom-bar">
                         <img src="assets/svg/music-light.svg">
-                        <fitted-text max-width="600" text="Artist - Song"></fitted-text> 
+                        <fitted-text max-width="600" text="" id="bar-music-title"></fitted-text> 
                     </div>
                 </div>
                 <div class="half right">
@@ -161,21 +123,22 @@
                         </div>
                     </div>
                     <div class="bar-teams wrapper" style="display: none;">
-                        <img class="img-left" src="assets/stages/S2_Stage_Ancho-V_Games.png" id="bar-team-a-image">
-                        <img class="img-right" src="assets/stages/S2_Stage_Blackbelly_Skatepark.png" id="bar-team-b-image">
+                        <img class="img-left" src="" id="bar-team-a-image">
+                        <img class="img-right" src="" id="bar-team-b-image">
                         <div class="names-wrapper">
                             <div class="team">
-                                <fitted-text class="name" text="Team A really really really long" max-width="600" id="bar-team-a-name"></fitted-text>
-                                <div class="score" id="bar-team-a-score">2</div>
+                                <fitted-text class="name" text="" max-width="600" id="bar-team-a-name"></fitted-text>
+                                <div class="score" id="bar-team-a-score"></div>
                             </div>
                             <div class="team">
-                                <fitted-text class="name" text="Team B" max-width="600" id="bar-team-b-name"></fitted-text>
-                                <div class="score" id="bar-team-b-score">1</div>
+                                <fitted-text class="name" text="" max-width="600" id="bar-team-b-name"></fitted-text>
+                                <div class="score" id="bar-team-b-score"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div> 
+        <div id="bubbles-wrapper"></div>
     </div>
 </body>

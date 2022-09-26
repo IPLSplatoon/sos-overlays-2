@@ -35,7 +35,6 @@ const castersNamesStack = document.getElementById("casters-name-stack");
 const castersSocialsStack = document.getElementById("casters-socials-stack"); 
 
 NodeCG.waitForReplicants(casters).then(() => {
-    console.log(Object.values(casters.value));
 
     casters.on('change', newValue => {
 

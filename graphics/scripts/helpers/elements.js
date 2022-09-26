@@ -29,4 +29,31 @@ export function getMapElement(name, mode) {
     stage.appendChild(infoContainer);
     return stage;
 }
+export function getNextMatchMapElement(name, mode) {
+    const stage = document.createElement("div");
+    stage.classList.add("stage");
+    stage.style.background = `var(--gradient), url('./assets/stages/${mapNameToImagePath[name]}')`;
+    stage.innerText = shorthandMode(mode);
+    return stage;
+}
+function shorthandMode(mode) {
+    switch (mode) {
+        case "Turf War":
+            return "TW";
+        case "Splat Zones":
+            return "SZ";
+        case "Tower Control":
+            return "TC";
+        case "Rainmaker":
+            return "RM";
+        case "Clam Blitz":
+            return "CB";
+    }
+}
+export function getMoreStagesElement(num) {
+    const moreStages = document.createElement("div");
+    moreStages.classList.add("stage", "more-stages");
+    moreStages.innerText = "+" + num;
+    return moreStages;
+}
 //# sourceMappingURL=elements.js.map

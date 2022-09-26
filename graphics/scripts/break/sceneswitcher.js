@@ -86,7 +86,7 @@ function shiftDown(durMulti) {
 function showMain() {
     const tl = gsap.timeline();
     tl.fromTo(".break > .left", fadeInStart, fadeInEnd);
-    tl.fromTo(".break > .right > .flavor-text", fadeInStart, fadeInEnd, "-=.2");
+    tl.fromTo("#main-scene-flavor-text", fadeInStart, fadeInEnd, "-=.2");
     tl.fromTo(".break > .right > .up-next-wrapper > .header", fadeInStart, fadeInEnd, "-=.4");
     tl.fromTo(".break > .right > .up-next-wrapper > .detail", fadeInStart, fadeInEnd, "-=.4");
     tl.fromTo(".break > .right > .up-next-wrapper > .stages-wrapper > *", fadeInStart, Object.assign(Object.assign({}, fadeInEnd), { stagger: .1 }), "-=.4");
@@ -155,6 +155,13 @@ function showStages() {
     tl.fromTo(stageElems, Object.assign({}, fadeInStart), Object.assign(Object.assign({}, fadeInEnd), { stagger: (.6 / count), onStart: function () {
             const wrapper = document.querySelector(".game-info-wrapper > .stages-wrapper");
             wrapper.style.display = "flex";
+            for (var i = 0; i < stageElems.length; i++) {
+                stageElems[i].style.transitionDuration = "0s";
+            }
+        }, onComplete: function () {
+            for (var i = 0; i < stageElems.length; i++) {
+                stageElems[i].style.transitionDuration = ".35s";
+            }
         } }));
     tl.fromTo(".bottom-bar > .right > .bar-teams", {
         opacity: 0
@@ -173,6 +180,13 @@ function hideStages() {
     tl.to(stageElems, Object.assign(Object.assign({}, fadeOut), { stagger: (.3 / count), onComplete: function () {
             const wrapper = document.querySelector(".game-info-wrapper > .stages-wrapper");
             wrapper.style.display = "none";
+            for (var i = 0; i < stageElems.length; i++) {
+                stageElems[i].style.transitionDuration = ".35s";
+            }
+        }, onStart: function () {
+            for (var i = 0; i < stageElems.length; i++) {
+                stageElems[i].style.transitionDuration = "0s";
+            }
         } }));
     tl.to(".bottom-bar > .right > .bar-teams", {
         opacity: 0,
