@@ -39,7 +39,6 @@ body{
 .color-container {
     width: 16px;
     height: 100%;
-    background: grey;
 }
 
 .top > .color-container{
@@ -55,6 +54,7 @@ body{
 }
 
 .score {
+    text-align: center;
     margin-left: auto;
     margin-right: 10px;
     width: 1ch;
@@ -77,10 +77,8 @@ body{
 
 .scoreboard-extra > img {
     position: absolute;
-    top: 77px;
-    left: -14px;
-    transform: rotate(345deg);
-    z-index: -1;
+    top: 89px;
+    left: -16px;
 }
 
 .flavor-town {
@@ -137,6 +135,7 @@ body{
     width: 100%;
     background: linear-gradient(90deg, var(--dark-blue) 0%, var(--blue-grey) 100%);
     border-radius: 0 0 10px 10px;
+    padding-bottom: 15px;
 }
 
 .comm {
@@ -144,12 +143,9 @@ body{
     padding: 15px 0 0 15px;
 }
 
-.comm:last-child {
-    padding: 15px 0 15px 15px;
-}
-
 .name-wrapper {
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-end;
     font-size: 40px;
 }
@@ -162,10 +158,12 @@ body{
 .comm > .socials {
     font-size: 20px;
     font-weight: 700;
+    line-height: 100%;
     color: var(--seafoam);
 }
 
 .pronouns-dark, .pronouns-light {
-    font-size: .4em;
-    transform: scaleX(.85) translateY(-.34em);
+    margin-top: 8px;
+    font-size: .5em;
+    transform: scaleX(.85) translateY(-.30em);
 }

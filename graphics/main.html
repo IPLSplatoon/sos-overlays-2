@@ -6,46 +6,53 @@
     <script defer src="../node_modules/fitted-text/dist/fitted-text.js"></script>
 </head>
 <body>
-    <div class="scoreboard-container">
+    <div class="scoreboard-container" id="scoreboard">
         <div class="team top">
-            <div class="color-container"></div>
-            <fitted-text class="team-name" text="Team A" max-width="230"></fitted-text>
-            <div class="score">0</div>
+            <div class="color-container" id="team-a-color"></div>
+            <fitted-text class="team-name" text="" max-width="230" id="team-a-name"></fitted-text>
+            <div class="score" id="team-a-score">0</div>
         </div>
         <div class="divider"></div>
         <div class="team bottom">
-            <div class="color-container"></div>
-            <fitted-text class="team-name" text="Team B" max-width="230"></fitted-text>
-            <div class="score">0</div>
+            <div class="color-container" id="team-b-color"></div>
+            <fitted-text class="team-name" text="" max-width="230" id="team-b-name"></fitted-text>
+            <div class="score" id="team-b-score">0</div>
         </div>
         <div class="scoreboard-extra">
             <img src="./assets/svg/ring.svg">
             <div class="flavor-town">
-                <fitted-text class="flavor-text" text="Swim or Sink 90: Round 1" max-width="220" align="center"></fitted-text>
+                <fitted-text class="flavor-text" text="" max-width="220" align="center" id="flavor-text"></fitted-text>
             </div>
         </div>
     </div>
 
-    <div class="comms-container">
+    <div class="comms-container" id="comms-container" style="opacity: 0;">
         <div class="title">
             <img src="assets/svg/mic.svg">
             <div>Commentators</div>
         </div>
         <div class="divider"></div>
         <div class="comms-wrapper">
-            <div class="comm">
+            <div class="comm" id="comm-1-wrapper">
                 <div class="name-wrapper">
-                    <fitted-text class="name" max-width="200" text="Caster A"></fitted-text>
-                    <div class="pronouns-light">they/them</div>
+                    <fitted-text class="name" max-width="260" text="Caster Aaaaaaaaaaaaaaaaaaaaaaaaa" id="comm-1-name"></fitted-text>
+                    <div class="pronouns-light" id="comm-1-pronouns">they/them</div>
                 </div>
-                <fitted-text class="socials" max-width="260" text="@CasterA"></fitted-text>
+                <fitted-text class="socials" max-width="260" text="@CasterA" id="comm-1-socials"></fitted-text>
             </div>
-            <div class="comm">
+            <div class="comm" id="comm-2-wrapper">
                 <div class="name-wrapper">
-                    <fitted-text class="name" max-width="200" text="Caster B"></fitted-text>
-                    <div class="pronouns-light">any</div>
+                    <fitted-text class="name" max-width="260" text="Caster Aaaaaaaaaaaaaaaaaaaaaaaaa" id="comm-2-name"></fitted-text>
+                    <div class="pronouns-light" id="comm-2-pronouns">they/them</div>
                 </div>
-                <fitted-text class="socials" max-width="260" text="@CasterB"></fitted-text>
+                <fitted-text class="socials" max-width="260" text="@CasterA" id="comm-2-socials"></fitted-text>
+            </div>
+            <div class="comm" id="comm-3-wrapper">
+                <div class="name-wrapper">
+                    <fitted-text class="name" max-width="260" text="Caster Aaaaaaaaaaaaaaaaaaaaaaaaa" id="comm-3-name"></fitted-text>
+                    <div class="pronouns-light" id="comm-3-pronouns">they/them</div>
+                </div>
+                <fitted-text class="socials" max-width="260" text="@CasterA" id="comm-3-socials"></fitted-text>
             </div>
         </div>
     </div>
