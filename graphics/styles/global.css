@@ -43,6 +43,7 @@ body {
     font-family: sourcesanspro;
     transform: scaleX(.9) translateY(-.125em);
     transform-origin: left;
+    width: fit-content;
 }
 
 .pronouns-light {

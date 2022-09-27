@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <script defer type="module" src="scripts/main/main.js"></script>
+    <script defer src="../node_modules/fitted-text/dist/fitted-text.js"></script>
+</head>
+<body>
+    <div class="scoreboard-container">
+        <div class="team top">
+            <div class="color-container"></div>
+            <fitted-text class="team-name" text="Team A" max-width="230"></fitted-text>
+            <div class="score">0</div>
+        </div>
+        <div class="divider"></div>
+        <div class="team bottom">
+            <div class="color-container"></div>
+            <fitted-text class="team-name" text="Team B" max-width="230"></fitted-text>
+            <div class="score">0</div>
+        </div>
+        <div class="scoreboard-extra">
+            <img src="./assets/svg/ring.svg">
+            <div class="flavor-town">
+                <fitted-text class="flavor-text" text="Swim or Sink 90: Round 1" max-width="220" align="center"></fitted-text>
+            </div>
+        </div>
+    </div>
+
+    <div class="comms-container">
+        <div class="title">
+            <img src="assets/svg/mic.svg">
+            <div>Commentators</div>
+        </div>
+        <div class="divider"></div>
+        <div class="comms-wrapper">
+            <div class="comm">
+                <div class="name-wrapper">
+                    <fitted-text class="name" max-width="200" text="Caster A"></fitted-text>
+                    <div class="pronouns-light">they/them</div>
+                </div>
+                <fitted-text class="socials" max-width="260" text="@CasterA"></fitted-text>
+            </div>
+            <div class="comm">
+                <div class="name-wrapper">
+                    <fitted-text class="name" max-width="200" text="Caster B"></fitted-text>
+                    <div class="pronouns-light">any</div>
+                </div>
+                <fitted-text class="socials" max-width="260" text="@CasterB"></fitted-text>
+            </div>
+        </div>
+    </div>
+</body>
