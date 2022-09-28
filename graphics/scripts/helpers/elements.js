@@ -1,4 +1,4 @@
-import { mapNameToImagePath } from "./constants.js";
+import { mapNameToImagePath, modeNameToSvgPath } from "./constants.js";
 export function getElementById(id) {
     return document.getElementById(id);
 }
@@ -33,24 +33,8 @@ export function getNextMatchMapElement(name, mode) {
     const stage = document.createElement("div");
     stage.classList.add("stage");
     stage.style.background = `var(--gradient), url('./assets/stages/${mapNameToImagePath[name]}')`;
-    stage.innerText = shorthandMode(mode);
+    stage.innerHTML = `<img src='assets/svg/${modeNameToSvgPath[mode]}'>`;
     return stage;
-}
-function shorthandMode(mode) {
-    switch (mode) {
-        case "Turf War":
-            return "TW";
-        case "Splat Zones":
-            return "SZ";
-        case "Tower Control":
-            return "TC";
-        case "Rainmaker":
-            return "RM";
-        case "Clam Blitz":
-            return "CB";
-        default:
-            return "";
-    }
 }
 export function getMoreStagesElement(num) {
     const moreStages = document.createElement("div");

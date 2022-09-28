@@ -37,4 +37,13 @@ export const mapNameToImagePath = {
     "Unknown Stage": "unnamed-unknown-map.png",
     "Counterpick": "unnamed-unknown-map.png"
 };
+export const modeNameToSvgPath = {
+    "Turf War": "unknown.svg",
+    "Splat Zones": "splat-zones.svg",
+    "Tower Control": "tower-control.svg",
+    "Rainmaker": "rainmaker.svg",
+    "Clam Blitz": "clam-blitz.svg",
+    "Unknown Mode": "unknown.svg",
+    "Counterpick": "unknown.svg"
+};
 //# sourceMappingURL=constants.js.map

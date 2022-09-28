@@ -99,6 +99,7 @@ body{
     width: 100%;
     margin-left: 26px;
     font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
     font-size: 18px;
     color: var(--seafoam);
     height: 31px;
@@ -168,5 +169,6 @@ body{
 .pronouns-dark, .pronouns-light {
     margin-top: 8px;
     font-size: .5em;
+    font-weight: 400;
     transform: scaleX(.85) translateY(-.30em);
 }

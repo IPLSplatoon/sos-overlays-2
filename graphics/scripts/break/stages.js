@@ -1,6 +1,6 @@
 import { activeRound } from '../helpers/replicants.js';
 import { getMapElement } from '../helpers/elements.js';
-import { mapNameToImagePath } from "../helpers/constants.js";
+import { mapNameToImagePath, modeNameToSvgPath } from "../helpers/constants.js";
 import { addDots } from '../helpers/misc.js';
 import gsap from '../../../node_modules/gsap/all.js';
 NodeCG.waitForReplicants(activeRound).then(() => {
@@ -94,23 +94,25 @@ export function updateScores(round) {
     const bottomBarNextStage = document.getElementById("next-stage");
     const bottomBarName = document.getElementById("next-stage-name");
     const bottomBarImage = document.getElementById("next-stage-image");
+    const bottomBarModeIcon = document.getElementById("next-stage-mode-icon");
     const barTl = gsap.timeline();
     for (var i = 0; i < games.length; i++) {
         if (games[i].winner === "none") {
-            barTl.to([bottomBarName, bottomBarImage], {
+            barTl.to(bottomBarNextStage, {
                 opacity: 0,
                 ease: "power2.in",
                 duration: .25,
                 onComplete: function () {
                     bottomBarName.setAttribute("text", games[i].stage);
                     bottomBarImage.setAttribute("src", "./assets/stages/" + mapNameToImagePath[games[i].stage]);
+                    bottomBarModeIcon.setAttribute("src", "./assets/svg/" + modeNameToSvgPath[games[i].mode]);
                 }
             })
-                .to([bottomBarName, bottomBarImage, bottomBarNextStage], {
+                .to(bottomBarNextStage, {
                 opacity: 1,
                 ease: "power2.out",
                 duration: .45
-            });
+            }, "+=.25");
             return;
         }
     }

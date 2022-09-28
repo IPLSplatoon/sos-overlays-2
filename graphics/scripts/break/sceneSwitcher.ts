@@ -116,7 +116,7 @@ function showMain() : gsap.core.Timeline {
     tl.fromTo(".break > .right > .up-next-wrapper > .timer", fadeInStart, fadeInEnd, "-=.4");
     tl.fromTo(".break-bottom-bar", {
         opacity: 0,
-        y: 50
+        y: 30
     }, {
         opacity: 1,
         y: 0,

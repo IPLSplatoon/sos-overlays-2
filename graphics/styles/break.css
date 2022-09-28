@@ -92,9 +92,9 @@
 }
 
 .up-next-wrapper > .stages-wrapper > .stage {
-    width: 240px;
+    width: 245px;
     height: 150px;
-    padding-left: 15px;
+    padding-left: 10px;
     background-size: cover !important;
     border: 4px solid var(--blue-grey);
     border-radius: 40px;
@@ -110,6 +110,10 @@
 
 .up-next-wrapper > .stages-wrapper > .stage:not(:last-child) {
     margin-right: 6px;
+}
+
+.up-next-wrapper > .stages-wrapper > .stage > img {
+    height: 46px;
 }
 
 .up-next-wrapper > .stages-wrapper > .more-stages {
@@ -450,10 +454,6 @@
     justify-content: flex-end;
 }
 
-.bottom-bar > .right > .wrapper > .text, .bottom-bar > .right > .wrapper > .team{
-    margin-right: 50px;
-}
-
 .bottom-bar > .right > .bar-teams {
     flex-direction: column;
 }
@@ -524,4 +524,13 @@
 .bottom-bar > .right > .next-stage > .text > .stage-name {
     font-size: 64px;
     line-height: 110%;
+}
+
+#next-stage-mode-icon{
+    height: 72px;
+    object-fit: contain;
+    width: auto;
+    margin-right: 50px;
+    margin-left: 30px;
+    z-index: 2;
 }

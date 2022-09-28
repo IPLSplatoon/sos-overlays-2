@@ -39,3 +39,14 @@ export const mapNameToImagePath: Record<string, string> = {
 	"Unknown Stage":"unnamed-unknown-map.png",
 	"Counterpick":"unnamed-unknown-map.png"
 };
+
+export const modeNameToSvgPath: Record<string, string> = {
+	"Turf War":"unknown.svg",
+	"Splat Zones":"splat-zones.svg",
+	"Tower Control":"tower-control.svg",
+	"Rainmaker":"rainmaker.svg",
+	"Clam Blitz":"clam-blitz.svg",
+	
+	"Unknown Mode":"unknown.svg",
+	"Counterpick":"unknown.svg"
+}
