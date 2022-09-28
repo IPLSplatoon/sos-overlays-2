@@ -1,6 +1,7 @@
 body{
-    filter: drop-shadow(0 0 18px #00000044);
-    font-family: dosis;
+    filter: drop-shadow(0 0 12px #000000aa);
+    font-family: 'Dosis', sans-serif;
+    font-weight: 500;
 }
 
 .scoreboard-container{
@@ -48,6 +49,7 @@ body{
 
 .bottom > .color-container{
     border-radius: 0 0 0 10px;
+    filter: drop-shadow(0 2px 4px #00000055);
 }
 
 .team-name {
@@ -96,7 +98,7 @@ body{
 .flavor-text {
     width: 100%;
     margin-left: 26px;
-    font-family: sourcesanspro;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 18px;
     color: var(--seafoam);
     height: 31px;

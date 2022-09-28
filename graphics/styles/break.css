@@ -1,5 +1,6 @@
 :root{
-    font-family: dosis, sourcesanspro, arial;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 500;
     color: var(--dark-teal);
     font-size: 64px;
 }
@@ -155,7 +156,8 @@
 }
 
 .break-bottom-bar > .wrapper > .group{
-    font-family: sourcesanspro;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
     font-size: 36px;
     white-space: nowrap;
     display: flex;

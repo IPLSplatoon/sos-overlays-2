@@ -25,7 +25,7 @@ function changeTeamName(name: string, team: 'a' | 'b'): void{
         duration: .25,
         ease: "power2.out",
         onComplete: function(){
-            elim.setAttribute("text", addDots(name, 36));
+            elim.setAttribute("text", addDots(name, 26));
         }
     })
     .to(elim, {
