@@ -269,12 +269,12 @@
 }
 
 .team-box > .roster {
-    height: 356px;
+    height: 436px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: flex-start;
-    padding: 50px 30px;
+    padding: 10px 30px;
 }
 
 .team-left > .roster {
@@ -285,6 +285,7 @@
     font-weight: 700;
     color: var(--seafoam);
     font-size: 40px;
+    height: 53px;
 }
 
 .teams-wrapper > .score{
@@ -401,7 +402,7 @@
     position: absolute;
     top: 2490px;
     width: 1600px;
-    height: 150px;
+    height: 136px;
     outline: 5px solid var(--seafoam);
     border-radius: 30px;
     background: var(--blue-grey);
@@ -457,7 +458,7 @@
 
 .bottom-bar > .right > .bar-teams > img {
     width: 250px;
-    height: 150px;
+    height: 136px;
     position: absolute;
     object-fit: cover;
     bottom: 2px;
@@ -498,7 +499,7 @@
 
 .bottom-bar > .right > .next-stage > .bg-image {
     width: 620px;
-    height: 150px;
+    height: 136px;
     position: absolute;
     border-radius: 0 30px 30px 0;
     -webkit-mask-image: linear-gradient(270deg, rgba(0,0,0,.3) 0%, rgba(0,0,0,.3) 50%, rgba(0,0,0,0)100%);
