@@ -1,4 +1,5 @@
 import { activeRound } from '../helpers/replicants.js';
+import { addDots } from '../helpers/misc.js';
 import gsap from '../../../node_modules/gsap/all.js';
 activeRound.on("change", (newValue, oldValue) => {
     if (oldValue === undefined) {
@@ -22,7 +23,7 @@ function changeTeamName(name, team) {
         duration: .25,
         ease: "power2.out",
         onComplete: function () {
-            elim.setAttribute("text", name);
+            elim.setAttribute("text", addDots(name, 36));
         }
     })
         .to(elim, {

@@ -294,9 +294,15 @@
 }
 
 .teams-wrapper > .score > .score-text{
+    display: flex;
+    justify-content: center;
+}
+
+.teams-wrapper > .score > .score-text > *{
     font-family: glock;
     color: white;
     font-size: 96px;
+    width: .8em;
 }
 
 .teams-wrapper > .score > .score-info{
@@ -367,6 +373,7 @@
     font-size: 1em;
     font-weight: 700;
     color: white;
+    overflow-wrap: anywhere;
 }
 
 .game-info-wrapper > .stages-wrapper > .stage > .info-container {

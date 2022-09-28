@@ -1,5 +1,7 @@
 import { activeRound } from '../helpers/replicants.js';
 import { getPlayerElement } from '../helpers/elements.js';
+import { addDots } from '../helpers/misc.js';
+import { updateScores } from './stages.js';
 import gsap from '../../../node_modules/gsap/all.js';
 NodeCG.waitForReplicants(activeRound).then(() => {
     if (!activeRound.value.teamA.showLogo) {
@@ -25,12 +27,14 @@ activeRound.on("change", (newValue, oldValue) => {
             setTeamName(newValue.teamA.name, 'a');
             setTeamImage(newValue.teamA.logoUrl, 'a');
             setScore(newValue.teamA.score, newValue.teamB.score, newValue.games.length);
+            updateScores(newValue);
         }
         if (newValue.teamB.name !== oldValue.teamB.name) {
             setPlayers(newValue.teamB.players, 'b');
             setTeamName(newValue.teamB.name, 'b');
             setTeamImage(newValue.teamB.logoUrl, 'b');
             setScore(newValue.teamA.score, newValue.teamB.score, newValue.games.length);
+            updateScores(newValue);
         }
         if (newValue.teamA.score !== oldValue.teamA.score
             || newValue.teamB.score !== oldValue.teamB.score
@@ -54,8 +58,8 @@ function setTeamName(teamName, team) {
         ease: "power2.in",
         duration: .25,
         onComplete: function () {
-            elim.setAttribute("text", teamName);
-            barElim.setAttribute("text", teamName);
+            elim.setAttribute("text", addDots(teamName));
+            barElim.setAttribute("text", addDots(teamName, 52));
         }
     });
     tl.to([elim, barElim], {
@@ -75,6 +79,14 @@ function setTeamImage(url, team) {
         onComplete: function () {
             elim.setAttribute("src", url);
             barElim.setAttribute("src", url);
+            if (url == '') {
+                elim.style.visibility = "hidden";
+                barElim.style.visibility = "hidden";
+            }
+            else {
+                elim.style.visibility = "visible";
+                barElim.style.visibility = "visible";
+            }
         }
     });
     if (url != '') {
@@ -82,7 +94,7 @@ function setTeamImage(url, team) {
             opacity: 1,
             ease: "power2.out",
             duration: .25
-        }, "+=.5");
+        }, "+=.25");
     }
 }
 function setPlayers(players, team) {
@@ -95,7 +107,7 @@ function setPlayers(players, team) {
         onComplete: function () {
             elim.innerHTML = "";
             for (var i = 0; i < players.length; i++) {
-                const playerElement = getPlayerElement(players[i].name);
+                const playerElement = getPlayerElement(addDots(players[i].name, 32));
                 elim.appendChild(playerElement);
             }
         }
@@ -111,7 +123,7 @@ function setScore(scoreA, scoreB, matchGames) {
     const barAScore = document.getElementById("bar-team-a-score");
     const barBScore = document.getElementById("bar-team-b-score");
     const gamesCount = document.getElementById("teams-screen-game-num");
-    elim.innerText = `${scoreA} - ${scoreB}`;
+    elim.innerHTML = `<div>${scoreA}</div><div>-</div><div>${scoreB}</div>`;
     barAScore.innerText = scoreA.toString();
     barBScore.innerText = scoreB.toString();
     gamesCount.innerText = `${matchGames} Games`;

@@ -1,3 +1,7 @@
+// im so sorry 'casters' and 'comms' got used interchangeably here.
+// this was written late at night.
+// they mean the same thing in this context.
+
 import { casters } from '../helpers/replicants.js';
 import { DASHBOARD_BUNDLE_NAME } from '../helpers/constants.js';
 import gsap from '../../../node_modules/gsap/all.js';
@@ -45,6 +49,7 @@ NodeCG.waitForReplicants(casters).then(() => {
             for(var i = 0; i < 3; i++){
                 if (oldCasters[i] === undefined || casters[i] === undefined){
                     if (oldCasters[i] === undefined && casters[i] !== undefined){
+                        changeComm(i, casters[i]);
                         showComm(i, true);
                     } else if (oldCasters[i] !== undefined && casters[i] === undefined){
                         showComm(i, false);

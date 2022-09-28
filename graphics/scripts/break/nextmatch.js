@@ -1,6 +1,7 @@
 import { nextRound } from '../helpers/replicants.js';
 import gsap from '../../../node_modules/gsap/all.js';
 import { getNextMatchMapElement, getMoreStagesElement } from '../helpers/elements.js';
+import { addDots } from '../helpers/string.js';
 const wrapper = document.getElementById("up-next-wrapper");
 const teamA = document.getElementById("next-match-team-a");
 const teamB = document.getElementById("next-match-team-b");
@@ -10,7 +11,6 @@ NodeCG.waitForReplicants(nextRound).then(() => {
     setNextRound(nextRound.value);
 });
 nextRound.on('change', (newValue, oldValue) => {
-    console.log(newValue);
     if (oldValue === undefined || newValue.showOnStream !== oldValue.showOnStream) {
         showUpNext(newValue.showOnStream);
     }
@@ -90,8 +90,8 @@ function setNextRound(round) {
     }
 }
 function changeTeams(round) {
-    teamA.setAttribute("text", round.teamA.name);
-    teamB.setAttribute("text", round.teamB.name);
+    teamA.setAttribute("text", addDots(round.teamA.name, 60));
+    teamB.setAttribute("text", addDots(round.teamB.name, 60));
     stageWrapper.innerHTML = "";
     for (var i = 0; i < Math.min(round.games.length, 3); i++) {
         stageWrapper.appendChild(getNextMatchMapElement(round.games[i].stage, round.games[i].mode));

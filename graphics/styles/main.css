@@ -34,6 +34,7 @@ body{
     height: 2px;
     width: 100%;
     background: #385663;
+    transform: translateY(-1px);
 }
 
 .color-container {
@@ -82,8 +83,8 @@ body{
 }
 
 .flavor-town {
-    width: 260px;
-    margin-left: 40px;
+    width: 265px;
+    margin-left: 35px;
     height: 31px;
     margin-top: 6px;
     background: var(--dark-blue);

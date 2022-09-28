@@ -1,6 +1,7 @@
 import { activeRound } from '../helpers/replicants.js';
 import { getMapElement } from '../helpers/elements.js';
 import { mapNameToImagePath } from "../helpers/constants.js";
+import { addDots } from '../helpers/misc.js';
 import gsap from '../../../node_modules/gsap/all.js';
 
 NodeCG.waitForReplicants(activeRound).then(() => {
@@ -66,7 +67,7 @@ function setStages(round) : void{
     }, "+=.25");
 }
 
-function updateScores(round) : void{
+export function updateScores(round) : void{
     const wrapper = document.getElementById("stage-wrapper") as HTMLElement;
     const stageElims = wrapper.children;
     const games = round.games;
@@ -90,10 +91,10 @@ function updateScores(round) : void{
 
             switch(games[i].winner){
                 case "alpha":
-                    winnerElim.innerText = alphaName;
+                    winnerElim.innerText = addDots(alphaName);
                     break;
                 case "bravo":
-                    winnerElim.innerText = bravoName;
+                    winnerElim.innerText = addDots(bravoName);
             }
             stageElims[i].classList.add("finished");
         }
