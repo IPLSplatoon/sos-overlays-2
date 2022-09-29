@@ -16,15 +16,13 @@ body {
     width: 1920px;
     height: 1080px;
     overflow: hidden;
-    outline: solid 2px black;
+    /* outline: solid 2px black; */
 }
 
 @font-face {
     font-family: glock;
     src: url(../assets/fonts/glock.ttf);
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500;700&family=Source+Sans+Pro:wght@300;400&display=swap');
 
 .pronouns-dark, .pronouns-light{
     font-size: .6em;

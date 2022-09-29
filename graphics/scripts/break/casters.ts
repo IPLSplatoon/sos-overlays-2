@@ -83,8 +83,8 @@ NodeCG.waitForReplicants(casters).then(() => {
                     casterPronouns[i].style.display = "none";
                 }
 
-                castersNamesStack.style.fontSize = numCasters >= 3 ? ".75em" : "1em";
-                castersSocialsStack.style.fontSize = numCasters >= 3 ? ".75em" : "1em";
+                castersNamesStack.style.fontSize = numCasters >= 3 ? ".65em" : "1em";
+                castersSocialsStack.style.fontSize = numCasters >= 3 ? ".65em" : "1em";
             }
         })
         .to([mainCasterWrappers[0].parentElement, ...casterNames, ...casterSocials], {

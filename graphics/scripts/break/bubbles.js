@@ -18,7 +18,7 @@ function initBubble(id, overrideDelay = 0) {
     bubble.style.left = `${getRandomNum(-50, pwidth + 50)}px`;
     const blur = getRandomInt(2, 19);
     bubble.style.filter = `blur(${blur}px)`;
-    const duration = getRandomInt(8, 13);
+    const duration = getRandomInt(9, 15);
     const delay = overrideDelay == 0 ? getRandomNum(0, 6) : overrideDelay;
     const scale = getRandomNum(.3, .9);
     const opacity = getRandomNum(.7, 1);

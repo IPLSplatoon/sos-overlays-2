@@ -72,30 +72,38 @@ function setTeamImage(url, team) {
     const elim = document.getElementById(`team-${team}-image`);
     const barElim = document.getElementById(`bar-team-${team}-image`);
     const tl = gsap.timeline();
+    function fadeIn(elim) {
+        tl.fromTo(elim, {
+            opacity: 0
+        }, {
+            visibility: "visible",
+            opacity: 1,
+            ease: "power2.out",
+            duration: .5
+        }, "<");
+    }
     tl.to([elim, barElim], {
         opacity: 0,
         ease: "power2.in",
         duration: .25,
         onComplete: function () {
-            elim.setAttribute("src", url);
-            barElim.setAttribute("src", url);
-            if (url == '') {
+            if (url == '' || url === undefined || url == null) {
                 elim.style.visibility = "hidden";
                 barElim.style.visibility = "hidden";
             }
             else {
-                elim.style.visibility = "visible";
-                barElim.style.visibility = "visible";
+                tl.to({}, { duration: .15 });
+                elim.setAttribute("src", url);
+                elim.addEventListener('load', () => {
+                    fadeIn(elim);
+                });
+                barElim.setAttribute("src", url);
+                barElim.addEventListener('load', () => {
+                    fadeIn(barElim);
+                });
             }
         }
     });
-    if (url != '') {
-        tl.to([elim, barElim], {
-            opacity: 1,
-            ease: "power2.out",
-            duration: .25
-        }, "+=.25");
-    }
 }
 function setPlayers(players, team) {
     const elim = document.getElementById(`team-${team}-roster`);

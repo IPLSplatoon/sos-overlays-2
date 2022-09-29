@@ -1,6 +1,6 @@
 body{
     filter: drop-shadow(0 0 12px #000000aa);
-    font-family: 'Dosis', sans-serif;
+    font-family: 'Dosis', 'Kosugi Maru', sans-serif;
     font-weight: 500;
 }
 
@@ -162,7 +162,7 @@ body{
 .comm > .socials {
     font-size: 20px;
     font-weight: 700;
-    line-height: 100%;
+    line-height: 115%;
     color: var(--seafoam);
 }
 

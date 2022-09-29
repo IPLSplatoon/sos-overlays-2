@@ -1,5 +1,5 @@
 :root{
-    font-family: 'Dosis', sans-serif;
+    font-family: 'Dosis', 'Kosugi Maru', sans-serif;
     font-weight: 500;
     color: var(--dark-teal);
     font-size: 64px;
@@ -343,8 +343,7 @@
     background-size: cover !important;
     border-radius: 30px;
     outline: 5px solid var(--seafoam);
-    background-position: center !important;
-    transition-duration: .35s;
+    transition: padding .35s;
     position: relative;
 
     --gradient: linear-gradient(0deg, var(--dark-blue) -10%, #00000000 110%);
@@ -366,6 +365,17 @@
 
 .game-info-wrapper > .stages-wrapper > .next {
     padding: 65px 35px 15px 15px;
+    animation: bg-shift 18s infinite alternate;
+    animation-timing-function: cubic-bezier(0.15, 0, 0.80, 1);
+}
+
+@keyframes bg-shift {
+    from { background-position: 40%; }
+    to   { background-position: 60%; } 
+}
+
+.game-info-wrapper > .stages-wrapper > :not(.next) {
+    background-position: 50% !important;
 }
 
 .game-info-wrapper > .stages-wrapper > .finished {
