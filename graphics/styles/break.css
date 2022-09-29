@@ -48,6 +48,10 @@
     justify-content: center;
 }
 
+.left > img {
+    height: 700px;
+}
+
 .break > div:first-child {
     align-items: center;
 }
@@ -434,6 +438,11 @@
     width: auto;
     margin-left: 50px;
     margin-right: 30px;
+}
+
+.bottom-bar > .left > .wrapper > .logo{
+    height: 118px;
+    filter: drop-shadow(0 0 10px #FFFFFF60);
 }
 
 .bottom-bar > .left > .wrapper > .stack{
