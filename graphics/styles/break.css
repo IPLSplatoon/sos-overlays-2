@@ -367,6 +367,7 @@
     padding: 65px 35px 15px 15px;
     animation: bg-shift 18s infinite alternate;
     animation-timing-function: cubic-bezier(0.15, 0, 0.80, 1);
+    --gradient: linear-gradient(0deg, var(--dark-blue) -20%, #00000000 100%);
 }
 
 @keyframes bg-shift {
@@ -396,6 +397,8 @@
     font-weight: 700;
     color: white;
     overflow-wrap: anywhere;
+    line-height: 110%;
+    font-size: 38px;
 }
 
 .game-info-wrapper > .stages-wrapper > .stage > .info-container {
@@ -441,7 +444,7 @@
 .bottom-bar > .left > .wrapper {
     display: flex;
     align-items: center;
-    font-size: 56px;
+    font-size: 50px;
 }
 
 .bottom-bar > .left > .wrapper > img{
@@ -503,14 +506,14 @@
 }
 
 .bottom-bar > .right > .bar-teams > .names-wrapper > .team > .name {
-    font-size: 56px;
+    font-size: 50px;
     z-index: 3;
     line-height: 110%;
     margin-right: 25px;
 }
 
 .bottom-bar > .right > .bar-teams > .names-wrapper > .team > .score {
-    font-size: 56px;
+    font-size: 50px;
     font-weight: 700;
     line-height: 110%;
     color: var(--seafoam);
