@@ -36,6 +36,7 @@ body{
     width: 100%;
     background: #385663;
     transform: translateY(-1px);
+    z-index: 10;
 }
 
 .color-container {
