@@ -455,7 +455,8 @@
 }
 
 .bottom-bar > .left > .wrapper > .logo{
-    height: 118px;
+    height: 140px;
+    margin-left: 20px;
     filter: drop-shadow(0 0 10px #FFFFFF60);
 }
 

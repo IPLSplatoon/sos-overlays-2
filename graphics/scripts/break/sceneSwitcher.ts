@@ -25,7 +25,7 @@ const fadeOut = {
 
 NodeCG.waitForReplicants(activeBreakScene).then(() => {
     if (activeBreakScene.value == "teams" || activeBreakScene.value == "stages"){
-        changeScene(activeBreakScene.value, "main", .2);
+        changeScene(activeBreakScene.value, "main", .1);
     }
 });
 
