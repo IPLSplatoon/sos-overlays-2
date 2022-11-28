@@ -2,6 +2,8 @@
 
 Second iteration of the broadcast overlays for Swim or Sink, a Splatoon tournament from Inkling Performance Labs.
 
+**Use of these graphics are protected via copyright. Do not reuse or redistribute this graphics package, even after modification. [See the license here](LICENSE). This repo serves as a reference and to help you make your own graphics from scratch.**
+
 ## Install
 
 1. Follow the instruction [here in ipl-overlay-controls](https://github.com/inkfarer/ipl-overlay-controls) to do
