@@ -35,6 +35,8 @@ export const mapNameToImagePath: Record<string, string> = {
     "Hammerhead Bridge":"S3_Stage_Hammerhead_Bridge.jpg",
     "Museum d'Alfonsino":"S3_Stage_Museum_dAlfonsino.jpg",
     "Mahi-Mahi Resort":"S3_Stage_Mahi_Mahi_Resort.jpg",
+    "Flounder Heights":"S3_Stage_Flounder_Heights.png",
+    "Brinewater Springs":"S3_Brinewater_Springs.png",
 
 	"Unknown Stage":"unnamed-unknown-map.png",
 	"Counterpick":"unnamed-unknown-map.png"
