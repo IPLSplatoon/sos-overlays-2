@@ -37,6 +37,7 @@ export const mapNameToImagePath = {
     "Flounder Heights": "S3_Stage_Flounder_Heights.png",
     "Brinewater Springs": "S3_Brinewater_Springs.png",
     "Um'ami Ruins": "S3_Stage_Umami_Ruins.png",
+    "Barnacle & Dime": "S3_Stage_Barnacle_&_Dime.png",
     "Unknown Stage": "unnamed-unknown-map.png",
     "Counterpick": "unnamed-unknown-map.png"
 };
