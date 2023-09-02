@@ -2,6 +2,11 @@
   "name": "sos-overlays-2",
   "version": "0.0.0",
   "description": "The second design of the Swim or Sink livestream overlays.",
+  "compatibleDashboardVersion": "^4.4.0",
+  "compatibleGameVersions": [
+    "SPLATOON_2",
+    "SPLATOON_3"
+  ],
   "homepage": "iplabs.ink",
   "author": {
     "name": ".jpg",
@@ -19,7 +24,7 @@
     "nodecg-bundle"
   ],
   "nodecg": {
-    "compatibleRange": "^1.1.1",
+    "compatibleRange": "^1.1.1 || ^2.0.0",
     "graphics": [
       {
         "file": "main.html",
@@ -37,8 +42,9 @@
   "private": true,
   "dependencies": {
     "fitted-text": "^2.0.5",
-    "gsap": "^3.11.1",
-    "json-schema-to-typescript": "^11.0.2",
-    "nodecg": "^1.9.0"
+    "gsap": "^3.11.1"
+  },
+  "devDependencies": {
+    "@nodecg/types": "^2.1.11"
   }
 }

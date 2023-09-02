@@ -7,13 +7,13 @@
         "baseUrl": ".",
         "moduleResolution": "node",
         "paths": {
-            "nodecg/*": [
-                "../../types/*"
-            ],
             "schemas": [
                 "../ipl-overlay-controls/src/types/schemas/index"
             ]
-        }
+        },
+        "types": [
+            "@nodecg/types/augment-window"
+        ]
     },
     "exclude": [
         "node_modules"

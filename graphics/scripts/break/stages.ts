@@ -1,10 +1,10 @@
-import { activeRound } from '../helpers/replicants.js';
+import { activeRound, assetPaths } from '../helpers/replicants.js';
 import { getMapElement } from '../helpers/elements.js';
-import { mapNameToImagePath, modeNameToSvgPath } from "../helpers/constants.js";
+import { getStageImagePath, modeNameToSvgPath } from '../helpers/constants.js';
 import { addDots } from '../helpers/misc.js';
 import gsap from '../../../node_modules/gsap/all.js';
 
-NodeCG.waitForReplicants(activeRound).then(() => {
+NodeCG.waitForReplicants(activeRound, assetPaths).then(() => {
     activeRound.on("change", (newValue, oldValue) => {
         if (oldValue === undefined || stagesChanged(oldValue.games, newValue.games)){ 
             setStages(newValue);
@@ -121,7 +121,7 @@ export function updateScores(round) : void{
                 duration: .25,
                 onComplete: function(){
                     bottomBarName.setAttribute("text", games[i].stage);
-                    bottomBarImage.setAttribute("src", "./assets/stages/" + mapNameToImagePath[games[i].stage]);
+                    bottomBarImage.setAttribute("src", getStageImagePath(games[i].stage));
                     bottomBarModeIcon.setAttribute("src", "./assets/svg/" + modeNameToSvgPath[games[i].mode]);
                 }
             })
