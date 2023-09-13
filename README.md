@@ -35,6 +35,3 @@ To edit the source code, please edit the TypeScript (.ts) files. You can compile
 ## Credits
 
 Code was very inspired by other IPL overlays created by [inkfarer](https://github.com/inkfarer)
-
-Splatoon 2/3 map portraits are property of Nintendo and were downloaded from
-the [Splatoon wiki.](https://splatoonwiki.org/)

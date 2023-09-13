@@ -1,4 +1,4 @@
-import { mapNameToImagePath, modeNameToSvgPath } from "./constants.js";
+import { getStageImagePath, modeNameToSvgPath } from './constants.js';
 export function getElementById(id) {
     return document.getElementById(id);
 }
@@ -12,7 +12,7 @@ export function getPlayerElement(name) {
 export function getMapElement(name, mode) {
     const stage = document.createElement("div");
     stage.classList.add("stage");
-    stage.style.background = `var(--gradient), url('./assets/stages/${mapNameToImagePath[name]}')`;
+    stage.style.background = `var(--gradient), url('${getStageImagePath(name)}')`;
     const winner = document.createElement("div");
     winner.classList.add("winner");
     const infoContainer = document.createElement("div");
@@ -32,7 +32,7 @@ export function getMapElement(name, mode) {
 export function getNextMatchMapElement(name, mode) {
     const stage = document.createElement("div");
     stage.classList.add("stage");
-    stage.style.background = `var(--gradient), url('./assets/stages/${mapNameToImagePath[name]}')`;
+    stage.style.background = `var(--gradient), url('${getStageImagePath(name)}')`;
     stage.innerHTML = `<img src='assets/svg/${modeNameToSvgPath[mode]}'>`;
     return stage;
 }

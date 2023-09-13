@@ -1,4 +1,4 @@
-import { nextRound } from '../helpers/replicants.js';
+import { assetPaths, nextRound } from '../helpers/replicants.js';
 import gsap from '../../../node_modules/gsap/all.js';
 import { getNextMatchMapElement, getMoreStagesElement } from '../helpers/elements.js';
 import { addDots } from '../helpers/string.js';
@@ -7,7 +7,7 @@ const teamA = document.getElementById("next-match-team-a");
 const teamB = document.getElementById("next-match-team-b");
 const stageWrapper = document.getElementById("next-match-stages-wrapper");
 const tl = gsap.timeline();
-NodeCG.waitForReplicants(nextRound).then(() => {
+NodeCG.waitForReplicants(nextRound, assetPaths).then(() => {
     setNextRound(nextRound.value);
 });
 nextRound.on('change', (newValue, oldValue) => {
