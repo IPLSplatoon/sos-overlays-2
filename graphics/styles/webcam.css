@@ -1,0 +1,76 @@
+#bubbles-wrapper{
+    position: absolute;
+    transform: scale(1.05);
+    filter: url(#turbulence);
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.bubble{
+    width: 10px;
+    position: absolute;
+    z-index: -100;
+}
+
+.background {
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+    background: linear-gradient(180deg, var(--off-white) 0%, var(--seafoam) 100%);
+    z-index: -2;
+}
+
+.webcam-wrapper {
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 1;
+}
+
+.caster-wrapper {
+    font-family: "Dosis";
+    position: relative;
+}
+
+.caster-wrapper > iframe {
+    width: 800px;
+    height: 450px;
+    border-radius: 30px;
+    outline: 5px solid var(--blue-grey);
+    border: none;
+    object-fit: cover;
+}
+
+.caster-wrapper.small > iframe{
+    width: 550px;
+    height: 309px;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    gap: .6em;
+    position: absolute;
+    top: calc(100% + .5em);
+}
+
+.caster-wrapper .name {
+    font-size: 60px;
+    font-weight: 500;
+    line-height: .8em;
+    color: var(--dark-blue);
+}
+
+.caster-wrapper .socials {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--blue-grey);
+}
+
+.caster-wrapper .pronouns-dark {
+    font-size: 30px;
+}
