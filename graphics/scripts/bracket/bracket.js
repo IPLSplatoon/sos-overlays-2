@@ -56,8 +56,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         }
     });
-
-    TourneyviewRenderer.revealOnObsSourceVisible(renderer, 0.7);
 });
 
 function buildBracketTitle(bracketData) {
