@@ -2,7 +2,7 @@
   "name": "sos-overlays-2",
   "version": "0.0.0",
   "description": "The second design of the Swim or Sink livestream overlays.",
-  "compatibleDashboardVersion": "^4.4.0",
+  "compatibleDashboardVersion": "~4.16.0",
   "compatibleGameVersions": [
     "SPLATOON_2",
     "SPLATOON_3"
@@ -40,12 +40,20 @@
         "file": "webcam.html",
         "width": 1920,
         "height": 1080
+      },
+      {
+        "file": "bracket.html",
+        "width": 1920,
+        "height": 1080
       }
     ]
   },
   "repository": "https://github.com/nodecg/nodecg.git",
   "private": true,
   "dependencies": {
+    "@tourneyview/common": "~0.8.0",
+    "@tourneyview/renderer": "~0.8.1",
+    "d3": "^7.9.0",
     "fitted-text": "^2.0.5",
     "gsap": "^3.11.1"
   },

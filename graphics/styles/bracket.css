@@ -1,0 +1,210 @@
+body {
+    font-family: 'Dosis', 'Kosugi Maru', sans-serif;
+}
+
+#bubbles-wrapper {
+    position: absolute;
+    transform: scale(1.05);
+    filter: url(#turbulence);
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.bubble {
+    width: 10px;
+    position: absolute;
+    z-index: -100;
+}
+
+.background {
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+    background: linear-gradient(180deg, var(--off-white) 0%, var(--seafoam) 100%);
+    z-index: -2;
+}
+
+.bracket-title {
+    position: absolute;
+    height: 70px;
+    width: 100%;
+    background: linear-gradient(180deg, var(--blue-grey) -150%, var(--dark-blue) 150%);
+    border-bottom: 4px solid var(--dark-teal);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#bracket-title-text {
+    color: white;
+    font-size: 42px;
+    font-weight: 600;
+}
+
+#bracket-container {
+    line-height: 1.5em;
+    position: absolute;
+    top: 110px;
+    left: 100px;
+    font-weight: 500;
+}
+
+#bracket-container > div {
+    width: 1720px;
+    height: 920px;
+    overflow: visible;
+}
+
+.swiss-renderer {
+    justify-items: center;
+}
+.swiss-renderer .match-cell-wrapper {
+    width: 250px;
+    margin: 6px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.swiss-renderer .match-cell-wrapper.missing-team {
+    opacity: 0.5;
+}
+.swiss-renderer .match-cell {
+    background: linear-gradient(180deg, var(--blue-grey) -100%, var(--dark-blue) 100%);
+    border: 2px solid var(--dark-teal);
+    box-sizing: border-box;
+    z-index: 2;
+    height: 100%;
+    min-width: 250px;
+    border-radius: .6em !important;
+    gap: 0 !important;
+    grid-template-rows: 1fr 2px 1fr !important;
+}
+.swiss-renderer .match-cell .separator {
+    grid-column: span 2;
+    height: 100%;
+    width: 100%;
+    background-color: var(--dark-teal);
+}
+.swiss-renderer .match-cell-wrapper .match-cell__score-wrapper {
+    font-weight: 700;
+    background-color: var(--off-white);
+    color: var(--dark-blue);
+    border-left: 2px solid var(--dark-teal);
+    height: 100%;
+    line-height: 2em;
+    transition: background 350ms;
+}
+.swiss-renderer .match-cell__team-name {
+    transition-duration: 350ms;
+    transition-property: font-weight, color;
+    font-weight: 500;
+    font-size: 1.5em !important;
+    line-height: 1.5em;
+    margin-left: 0 !important;
+    padding-left: 5px;
+    box-sizing: border-box;
+}
+.swiss-renderer .match-cell-wrapper.top-team-winner .match-cell__top-team-name {
+    font-weight: 700;
+    color: var(--seafoam);
+}
+.swiss-renderer .match-cell-wrapper.bottom-team-winner .match-cell__bottom-team-name {
+    font-weight: 700;
+    color: var(--seafoam);
+}
+.swiss-renderer .match-cell-wrapper.top-team-winner .match-cell__score-wrapper:nth-child(2),
+.swiss-renderer .match-cell-wrapper.bottom-team-winner .match-cell__score-wrapper:last-child {
+    background: linear-gradient(90deg, var(--seafoam) -50%, var(--off-white) 150%);
+}
+
+.elimination-renderer .bracket-header {
+    color: white;
+}
+.elimination-renderer .match-cell-wrapper {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    transition: opacity 350ms;
+}
+.elimination-renderer .match-cell-wrapper.missing-team {
+    opacity: 0.5;
+}
+.elimination-renderer .match-cell {
+    background: linear-gradient(180deg, var(--blue-grey) -100%, var(--dark-blue) 100%);
+    border: 2px solid var(--dark-teal);
+    box-sizing: border-box;
+    border-radius: .6em !important;
+    z-index: 2;
+    height: 100%;
+    grid-template-rows: 1fr 2px 1fr !important;
+}
+.elimination-renderer .match-cell.has-third-place-match-label {
+    grid-template-rows: auto 1fr 2px 1fr !important;
+}
+.elimination-renderer .match-cell__third-place-match-label {
+    background-color: var(--blue-grey) !important;
+    font-weight: 700;
+}
+.elimination-renderer .match-cell .separator {
+    grid-column: span 2;
+    height: 100%;
+    width: 100%;
+    background-color: var(--dark-teal);
+}
+.elimination-renderer .match-cell-wrapper .match-cell__score-wrapper {
+    font-weight: 700;
+    background-color: var(--off-white);
+    color: var(--dark-blue);
+    border-left: 2px solid var(--dark-teal);
+    height: 100%;
+    line-height: 1.75em;
+    transition: background 350ms;
+}
+.elimination-renderer .match-cell-wrapper.top-team-winner .match-cell__top-team-name {
+    font-weight: 700;
+    color: var(--seafoam);
+}
+.elimination-renderer .match-cell-wrapper.bottom-team-winner .match-cell__bottom-team-name {
+    font-weight: 700;
+    color: var(--seafoam);
+}
+.elimination-renderer .match-cell-wrapper.top-team-winner .match-cell__score-wrapper:nth-child(2),
+.elimination-renderer .match-cell-wrapper.bottom-team-winner .match-cell__score-wrapper:last-child {
+    background: linear-gradient(90deg, var(--seafoam) -50%, var(--off-white) 150%);
+}
+.elimination-renderer .bracket-link {
+    stroke: var(--blue-grey);
+}
+.elimination-renderer .match-cell__team-name {
+    transition-duration: 350ms;
+    transition-property: font-weight, color;
+    font-weight: 500;
+    font-size: 1.35em !important;
+    line-height: 1.25em;
+    margin-left: 0 !important;
+    padding-left: 5px;
+    box-sizing: border-box;
+}
+
+.round-robin-renderer .round-robin-grid-item.type-match {
+    background: linear-gradient(180deg, var(--blue-grey) -100%, var(--dark-blue) 100%);
+    border: 2px solid var(--dark-teal);
+    box-sizing: border-box;
+}
+.round-robin-renderer .round-robin-grid-item.type-team-name {
+    font-weight: 700;
+}
+.round-robin-renderer .round-robin-grid-item.type-match .score-layout {
+    transform: unset;
+    transition: color 350ms;
+}
+.round-robin-renderer .round-robin-grid-item.type-match.top-team-winner .top-score-wrapper {
+    font-weight: 700;
+    color: var(--seafoam);
+}
+.round-robin-renderer .round-robin-grid-item.type-match.left-team-winner .left-score-wrapper {
+    font-weight: 700;
+    color: var(--seafoam);
+}
